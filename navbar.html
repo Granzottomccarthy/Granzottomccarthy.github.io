@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>NAVBAR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('all')">GRANZOTTO-MCCARTHY FAMILY COOKBOOK</a>
+    <a class="w3-bar-item w3-padding-large w3-hide-medium w3-hide-small">browse by: </a>
+    <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+      <button class="w3-padding-large w3-button" title="RECIPE">RECIPE <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a class="w3-bar-item w3-button" onclick="filterSelection('menu')"> All Recipes</button>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Snacks')"> Snacks</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Appetizers')"> Appetizers</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Sides')"> Sides</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Main')"> Main Dishes</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Sauces')"> Sauces</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Desserts')"> Desserts</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Breakfast')"> Breakfast</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Soups')"> Soups</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Salads')"> Salads</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Crafts')"> Crafts</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+      <button class="w3-padding-large w3-button" title="INGREDIANT">INGREDIANT <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Beef')"> Beef</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Bread')"> Bread</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Cheese')"> Cheese</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Chicken')"> Chicken</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Egg')"> Egg</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Fish')"> Fish</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Fruit')"> Fruit</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Pasta')"> Pasta</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Pork')"> Pork</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Rice')"> Rice</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Sausage')"> Sausage</a>
+        <a class="w3-bar-item w3-button" onclick="filterSelection('Vegetables')"> Vegetables</a>
+      </div>
+    </div>
+    <div class="w3-hide-small w3-right">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hover-red" onclick="filterSelection('About')">About</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hover-red" onclick="filterSelection('Music')">Music</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hover-red" onclick="filterSelection('Contact')">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-top" style="margin-top:46px">
+
+  <div class="w3-dropdown-hover">
+    <button class="w3-padding-large w3-button" title="RECIPE">RECIPE <i class="fa fa-caret-down"></i></button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a class="w3-bar-item w3-button" onclick="filterSelection('menu')"> All Recipes</button>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Snacks')"> Snacks</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Appetizers')"> Appetizers</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Sides')"> Sides</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Main')"> Main Dishes</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Sauces')"> Sauces</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Desserts')"> Desserts</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Breakfast')"> Breakfast</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Soups')"> Soups</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Salads')"> Salads</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Crafts')"> Crafts</a>
+    </div>
+  </div>
+  <div class="w3-dropdown-hover">
+    <button class="w3-padding-large w3-button" title="INGREDIANT">INGREDIANT <i class="fa fa-caret-down"></i></button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Beef')"> Beef</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Bread')"> Bread</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Cheese')"> Cheese</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Chicken')"> Chicken</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Egg')"> Egg</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Fish')"> Fish</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Fruit')"> Fruit</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Pasta')"> Pasta</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Pork')"> Pork</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Rice')"> Rice</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Sausage')"> Sausage</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Vegetables')"> Vegetables</a>
+    </div>
+  </div>
+  <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('About')">About</a>
+  <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('Music')">Music</a>
+  <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('Contact')">Contact</a>
+</div>
+
+  <div class="w3-content w3-black"></div>
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>

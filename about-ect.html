@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<title>ABOUT-ECT</title>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="EyT9eGHchNr_f6jhlp2TWrK-0PGuHkiK3fyxkh7vyZ0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  display: none; /* Hide all elements by default */
+}
+/* Create header that floats next to each other */
+.header {
+  float: left;
+  width: 100%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Page Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+/* Catagory images with header Title */
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #;
+  color: black;
+  font-size: 42px;
+  opacity: 0.8;
+}
+/* header titles: */
+div.transbox {
+  margin: 30px 25%;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.7;
+}
+div.transbox p {
+  margin: 1%;
+  font-size: 42px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+}
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col"] {
+    width: 100%;
+  }
+}
+</style>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1600px;margin-top:100px">
+
+  <!-- About Section -->
+  <div style="width:100%" class="w3-center column About" id="about">
+    <div class="w3-col m6">
+     <img src="images/history.jpg" class="w3-right w3-padding w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+    <div class="w3-left w3-padding w3-col m6 ">
+      <h1 class="w3-center">About Cookbook</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large w3-left-align">This cookbook was origanly put together by Kim Granzotto in 2004, in printed form and given as Christmas gifts.
+      <p class="w3-large w3-left-align">If you are interested in the Granzotto Family history and want to read more, you can head over to <a href="https://www.angelfire.com/mi/Granzotto/Genealogy.htm">https://www.angelfire.com/mi/Granzotto/Genealogy.htm</a>. As of 26-NOV-2020 the web site was still up.</p>
+    </div>
+  </div>
+
+  <!-- Music Section -->
+  <br>
+  <div style="width:100%" class="w3-column column Music" id="music">
+    <div class="w3-center">
+      <h1>Seasons Greatings!</h1><br>
+          <iframe width="420" height="345" src="https://www.youtube.com/embed/Ca5wXojemRM">
+            </iframe>
+          <iframe width="420" height="345" src="https://www.youtube.com/embed/qTx-sdR6Yzk">
+            </iframe>
+    </div>
+  </div>
+
+<!-- Contact Section -->
+  <div style="width:100%" class="w3-panel w3-padding column Contact" id="contact">
+    <h1 class="w3-center">Contact</h1><br>
+    <p class="w3-center w3-large"><b>GRANZOTTO-MCCARTHY FAMILY COOKBOOK</b></p>
+    <p class="w3-center">Did you see any errors (spelling, recipe, format... anything)??? Whant to add a recipe? Please contact us by email at <a href="mailto:granzottomccarthy@gmail.com">granzottomccarthy@gmail.com</a> so we can get it updated.</p>
+  </div>
+
+<script>
+// Filter using buttons dropdowns and links
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+</script>
+</body>
+</html>

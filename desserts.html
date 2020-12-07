@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<title>DESSERTS</title>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="EyT9eGHchNr_f6jhlp2TWrK-0PGuHkiK3fyxkh7vyZ0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  display: none; /* Hide all elements by default */
+}
+/* Create header that floats next to each other */
+.header {
+  float: left;
+  width: 100%;
+  display: none; /* Hide all elements by default */
+}
+/* Page Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+/* Catagory images with header Title */
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #;
+  color: black;
+  font-size: 42px;
+  opacity: 0.8;
+}
+/* Header backgrounds */
+div.background-desserts {
+  background: url(images/desserts.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* header titles: */
+div.transbox {
+  margin: 30px 25%;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.7;
+}
+div.transbox p {
+  margin: 1%;
+  font-size: 42px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+}
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col"] {
+    width: 100%;
+  }
+}
+</style>
+<body>
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1600px">
+<!--* Header/desserts */-->
+    <div style="width:100%" class="background-desserts column Desserts">
+      <div class="transbox">
+          <p>Desserts</p>
+      </div>
+      </div>
+<!-- Photo Grid Desserts-->
+<div class="w3-row-padding w3-center" id="food">
+  <div class="w3-col column menu Desserts"><h3><a href="recipes/sugar-cookies.html">Sugar Cookies</h3></a>
+      <a href="recipes/sugar-cookies.html"><img src="images/sugar-cookies.jpg" class="w3-hover-opacity" style="width:100%"></a>
+      <p>From the kitchen of: Joyce McCarthy</p>
+      </div>
+      <div class="w3-col column menu Desserts"><h3><a href="recipes/butterscotch-squares.html">Butterscotch Squares</h3></a>
+          <a href="recipes/butterscotch-squares.html"><img src="images/butterscotch-squares.jpg" class="w3-hover-opacity" style="width:100%"></a>
+          <p>From the kitchen of: Grandma Donaher</p>
+          </div>
+      </div>
+<script>
+// Filter using buttons dropdowns and links
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+</script>
+</body>
+</html>
