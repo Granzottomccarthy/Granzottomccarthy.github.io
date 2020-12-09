@@ -72,7 +72,7 @@ div.transbox p {
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1600px">
 <!--* Header/main dishes */-->
-  <div style="width:100%" class="background-main Main">
+  <div style="width:100%" class="background-main column Main">
     <div class="transbox">
       <p>Main Dishes</p>
     </div>
@@ -115,15 +115,15 @@ div.transbox p {
       <a href="recipes/risotto-paul.html"><img src="images/risotto-red.jpg" class="w3-hover-opacity" style="width:100%"></a>
       <p>From the kitchen of: Paul Granzotto</p>
     </div>
-  <div class="w3-col menu Main Sausage" alt="Sausage"><h3><a href="recipes/schotch-eggs.html">Schotch Eggs</h3></a>
+  <div class="w3-col column menu Main Sausage" alt="Sausage"><h3><a href="recipes/schotch-eggs.html">Schotch Eggs</h3></a>
       <a href="recipes/schotch-eggs.html"><img src="images/schotch-eggs.jpg" class="w3-hover-opacity" style="width:100%"></a>
       <p>From the kitchen of: Jonh & Kim Granzotto</p>
     </div>
-  <div class="w3-col menu Main Beef" alt="Beef"><h3><a href="recipes/shephards-pie.html">Shephard's Pie</h3></a>
+  <div class="w3-col column menu Main Beef" alt="Beef"><h3><a href="recipes/shephards-pie.html">Shephard's Pie</h3></a>
       <a href="recipes/shephards-pie.html"><img src="images/shepherds-pie.jpg" class="w3-hover-opacity" style="width:100%"></a>
       <p>From the kitchen of: Peg Granzotto</p>
     </div>
-  <div class="w3-col menu Main Pork" alt="Pork"><h3><a href="recipes/soulvaki.html">Soulvaki</h3></a>
+  <div class="w3-col column menu Main Pork" alt="Pork"><h3><a href="recipes/soulvaki.html">Soulvaki</h3></a>
       <a href="recipes/soulvaki.html"><img src="images/soulvaki.jpg" class="w3-hover-opacity" style="width:100%"></a>
       <p>From the kitchen of: Kim Granzotto</p>
     </div>
@@ -133,7 +133,7 @@ div.transbox p {
   filterSelection("all")
   function filterSelection(c) {
     var x, i;
-    x = document.getElementsByClassName("column");
+    x = document.getElementsByClassName("none");
     if (c == "all") c = "";
     for (i = 0; i < x.length; i++) {
       w3RemoveClass(x[i], "show");
