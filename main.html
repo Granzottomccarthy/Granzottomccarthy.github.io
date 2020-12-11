@@ -7,6 +7,36 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <body>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
 <style>
 /* Add padding BETWEEN each column */
 .row,
@@ -66,7 +96,6 @@ div.transbox p {
   }
 }
 </style>
-<body>
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1600px">
 <!--* Header/main dishes */-->
@@ -82,7 +111,7 @@ div.transbox p {
       <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
     <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
     <div class="w3-modal-content w3-animate-zoom">
-    <a href="recipes/bistecca.html"></a>
+    <div w3-include-html="recipes/bistecca.html"></div>
     </div>
   </div>
   </div>
@@ -132,6 +161,8 @@ div.transbox p {
       </div>
   </div>
   <script>
+    // Linked (include) pages
+includeHTML();
   // Filter using buttons dropdowns and links
   filterSelection("all")
   function filterSelection(c) {
