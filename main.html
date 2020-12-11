@@ -77,10 +77,15 @@ div.transbox p {
   </div>
 <!-- Photo Grid Main dishes-->
 <div class="w3-row-padding w3-center" id="food">
-  <div class="w3-col column menu Main Beef"><h3><a href="recipes/bistecca.html">Bistecca Pizzaiola</h3></a>
-        <a href="recipes/bistecca.html"><img src="images/bistecca.jpg" class="w3-hover-opacity" style="width:100%"></a>
-        <p>From the kitchen of: Peg Granzotto</p>
-      </div>
+  <div class="w3-col column menu Main Beef"><h3><a href="bistecca.html">Bistecca Pizzaiola</h3></a>
+  <img src="bistecca.jpg" class="w3-hover-opacity" style="width 30%" onclick="document.getElementById('modal01').style.display='block'">
+      <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom">
+    <a href="bistecca.html"></a>
+    </div>
+  </div>
+  </div>
   <div class="w3-col column menu Main Beef"><h3><a href="recipes/Calzones.html">Calzones</h3></a>
       <a href="recipes/Calzones.html"><img src="images/calzones.png" class="w3-hover-opacity" style="width:100%"></a>
       <p>From the kitchen of: Megan Kovach</p>
