@@ -80,27 +80,43 @@ div.transbox p {
   </div>
 <!-- Photo Grid appetizers 1-->
 <div class="w3-row-padding w3-center" id="food">
-  <div class="w3-col column menu Appetizers Chicken" alt="Chicken"><h3><a href="recipes/artichoke chicken.html" target="_blank">Artichoke-Filled Chicken Rolls</h3></a>
-        <a href="recipes/artichoke chicken.html" target="_blank"><img src="images/artichoke-chicken.jpg" class="w3-hover-opacity" style="width:100%"></a>
-        <p>From the kitchen of: Jane Braun</p>
-      </div>
-      <div class="w3-col column menu Appetizers Cheese"><h3><a href="recipes/bacon-cheese-olives.html" target="_blank">Cheese Olives</h3></a>
-          <a href="recipes/bacon-cheese-olives.html" target="_blank"><img src="images/bacon-cheese-olives.jpg" class="w3-hover-opacity" style="width:100%"></a>
-          <p>From the kitchen of: Joyce McCarthy</p>
-        </div>
-        <div class="w3-col column menu Appetizers Bread" alt="Chicken"><h3><a href="recipes/biscotti-honey-almond.html" target="_blank">Honey Almond Biscotti</h3></a>
-            <a href="recipes/biscotti-honey-almond.html" target="_blank"><img src="images/biscotti-honey-almond.jpg" class="w3-hover-opacity" style="width:100%"></a>
-            <p>From the kitchen of: James Granzotto</p>
-          </div>
-          <div class="w3-col column menu Appetizers Bread" alt="Chicken"><h3><a href="recipes/irish-soda-bread.html" target="_blank">Sada’s Irish Soda Bread</h3></a>
-              <a href="recipes/irish-soda-bread.html" target="_blank"><img src="images/irish-soda-bread.jpg" class="w3-hover-opacity" style="width:100%"></a>
-              <p>From the kitchen of: James Granzotto</p>
-            </div>
-  <div class="w3-col column menu Appetizers Beef" alt="Chicken"><h3><a href="recipes/french-bread.html" target="_blank">Stuffed French Bread</h3></a>
-      <a href="recipes/french-bread.html" target="_blank"><img src="images/french-bread.jpg" class="w3-hover-opacity" style="width:100%"></a>
-      <p>From the kitchen of: Peg Granzotto</p>
-    </div>
-  </div>
+
+  <div class="w3-col column menu Appetizers Chicken"><h3><a href="recipes/artichoke chicken.html" target="_blank">Artichoke-Filled Chicken Rolls</h3></a>
+  <img src="images/artichoke-chicken.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal13').style.display='block'"></img>
+    <div id="modal13" class="w3-modal modal-lg">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container" style="background-color:#00b4ae"><h3><a href="recipes/artichoke chicken.html" target="_blank">CLICK TO OPEN IN NEW WINDOW</a></h3></header>
+          <span onclick="document.getElementById('modal13').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
+            <div class="w3-modal-content w3-animate-zoom">
+              <div w3-include-html="recipes/artichoke chicken.html"></div>
+            </div></div></div></div>
+  <div class="w3-col column menu Appetizers Cheese"><h3><a href="recipes/bacon-cheese-olives.html" target="_blank">Cheese Olives</h3></a>
+  <img src="images/bacon-cheese-olives.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal14').style.display='block'"></img>
+    <div id="modal14" class="w3-modal modal-lg">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container" style="background-color:#00b4ae"><h3><a href="recipes/bacon-cheese-olives.html" target="_blank">CLICK TO OPEN IN NEW WINDOW</a></h3></header>
+          <span onclick="document.getElementById('modal14').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
+            <div class="w3-modal-content w3-animate-zoom">
+              <div w3-include-html="recipes/bacon-cheese-olives.html"></div>
+            </div></div></div></div>
+  <div class="w3-col column menu Appetizers Bread"><h3><a href="recipes/biscotti-honey-almond.html" target="_blank">Honey Almond Biscotti</h3></a>
+  <img src="images/biscotti-honey-almond.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal15').style.display='block'"></img>
+    <div id="modal15" class="w3-modal modal-lg">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container" style="background-color:#00b4ae"><h3><a href="recipes/biscotti-honey-almond.html" target="_blank">CLICK TO OPEN IN NEW WINDOW</a></h3></header>
+          <span onclick="document.getElementById('modal15').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
+            <div class="w3-modal-content w3-animate-zoom">
+              <div w3-include-html="recipes/biscotti-honey-almond.html"></div>
+            </div></div></div></div>
+  <div class="w3-col column menu Appetizers Bread"><h3><a href="recipes/irish-soda-bread.html" target="_blank">Sada’s Irish Soda Bread</h3></a>
+  <img src="images/irish-soda-bread.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal16').style.display='block'"></img>
+    <div id="modal16" class="w3-modal modal-lg">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container" style="background-color:#00b4ae"><h3><a href="recipes/irish-soda-bread.html" target="_blank">CLICK TO OPEN IN NEW WINDOW</a></h3></header>
+          <span onclick="document.getElementById('modal16').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
+            <div class="w3-modal-content w3-animate-zoom">
+              <div w3-include-html="recipes/irish-soda-bread.html"></div>
+            </div></div></div></div>
     <script>
     // Filter using buttons dropdowns and links
     filterSelection("all")
