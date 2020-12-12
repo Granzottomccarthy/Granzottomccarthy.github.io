@@ -38,13 +38,13 @@ function includeHTML() {
 };
 </script>
 <style>
-/* Add padding BETWEEN each column */
+/* Add padding BETWEEN each w3-col column */
 .row,
-.row > .column {
+.row > .w3-col column {
   padding: 8px;
 }
-/* Create four equal columns that floats next to each other */
-.column {
+/* Create four equal w3-col columns that floats next to each other */
+.w3-col column {
   float: left;
   width: 25%;
 }
@@ -91,25 +91,51 @@ div.transbox p {
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  [class*="col"] {
+  [class*="modal"] {
     width: 100%;
   }
 }
+/* MODAL CLOSE BUTTON */
+.btn-modal {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+}
+.btn-modal:hover {
+  background-color: #f04948;
+  color: white;
+}
 </style>
+</head>
+<body>
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1600px">
 <!--* Header/main dishes */-->
-  <div style="width:100%" class="background-main column Main">
+  <div style="width:100%" class="background-main w3-col column Main">
     <div class="transbox">
       <p>Main Dishes</p>
     </div>
   </div>
 <!-- Photo Grid Main dishes-->
 <div class="w3-row-padding w3-center" id="food">
+
     <div class="w3-col column menu Main Beef"><h3><a href="recipes/bistecca.html" target="_blank">Bistecca Pizzaiola</h3></a>
-      <a href="recipes/bistecca.html" target="_blank"><img src="images/bistecca.jpg" class="w3-hover-opacity" style="width:100%"></a>
-      <p>From the kitchen of: Peg Granzotto</p>
+    <img src="images/bistecca.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal01').style.display='block'"></img>
+      <div id="modal01" class="w3-modal modal-lg">
+          <div class="w3-modal-content w3-card-4">
+              <header class="w3-container" style="background-color:#00b4ae"><h3><a href="recipes/bistecca.html" target="_blank">CLICK TO OPEN IN NEW WINDOW</a></h3></header>
+                <span onclick="document.getElementById('modal01').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
+                  <div class="w3-modal-content w3-animate-zoom">
+                      <div w3-include-html="recipes/bistecca.html"></div>
+        </div>
     </div>
+  </div>
+</div>
+
   <div class="w3-col column menu Main Beef"><h3><a href="recipes/Calzones.html" target="_blank">Calzones</h3></a>
       <a href="recipes/Calzones.html" target="_blank"><img src="images/calzones.png" class="w3-hover-opacity" style="width:100%"></a>
       <p>From the kitchen of: Megan Kovach</p>
