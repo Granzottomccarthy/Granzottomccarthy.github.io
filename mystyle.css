@@ -8,6 +8,7 @@
 .column {
   float: left;
   width: 25%;
+  display: none; /* Hide all elements by default */
 }
 /* Create header that floats next to each other */
 .header {
