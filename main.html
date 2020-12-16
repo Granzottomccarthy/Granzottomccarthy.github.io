@@ -2,49 +2,19 @@
 <html>
 <title>MAIN DISHES</title>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="EyT9eGHchNr_f6jhlp2TWrK-0PGuHkiK3fyxkh7vyZ0" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <body>
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
-</script>
 <style>
-/* Add padding BETWEEN each w3-col column */
+/* Add padding BETWEEN each column */
 .row,
-.row > .w3-col column {
+.row > .column {
   padding: 8px;
 }
-/* Create four equal w3-col columns that floats next to each other */
-.w3-col column {
+/* Create four equal columns that floats next to each other */
+.column {
   float: left;
   width: 25%;
 }
@@ -149,6 +119,15 @@ div.transbox p {
             <span onclick="document.getElementById('modal02').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
               <div class="w3-modal-content w3-animate-zoom">
                 <div w3-include-html="recipes/Calzones.html"></div>
+              </div></div></div></div>
+    <div class="w3-col column menu Main Chicken Kim"><h3><a href="recipes/chicken-cordon-bleu.html" target="_blank">Chicken Cordon Bleu</h3></a>
+    <img src="images/chicken-cordon-bleu.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal52').style.display='block'"></img>
+      <div id="modal52" class="w3-modal modal-lg">
+        <div class="w3-modal-content w3-card-4">
+          <header class="w3-container" style="background-color:#00b4ae"><h3><a href="recipes/chicken-cordon-bleu.html" target="_blank">OPEN IN NEW WINDOW</a></h3></header>
+            <span onclick="document.getElementById('modal52').style.display='none'" class="btn-modal w3-display-topright">&times;</span>
+              <div class="w3-modal-content w3-animate-zoom">
+                <div w3-include-html="recipes/chicken-cordon-bleu.html"></div>
               </div></div></div></div>
     <div class="w3-col column menu Main Chicken Peg"><h3><a href="recipes/chicken-divan.html" target="_blank">Chicken Divan</h3></a>
     <img src="images/chicken-divan.jpg" class="w3-hover-opacity" style="width:100%" onclick="document.getElementById('modal03').style.display='block'"></img>
