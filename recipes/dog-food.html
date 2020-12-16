@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Homemade Dog Food - Family Cookbook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+html,body {font-family:"Verdana",sans-serif}
+h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
+</style>
+<script src=""></script>
+<style>
+
+  /* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-style: solid;
+  border-width: 1px;
+  align-content: center;
+  background-color: #d9d9d9;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5.5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+</style>
+<body>
+<div align="left" class="w3-padding-small">
+<h1 align="center">Homemade Dog Food</h1>
+<p align="center">From the kitchen of: Kim Granzotto</p>
+<p><b>Prep:</b>__ mins</p>
+<p><b>Cook:</b> __ mins</p>
+<p><b>Total:</b>__ mins</p>
+<p><b>Number of servings:</b>__</p>
+<br>
+<p><b>INGREDIENTS:</b></p>
+<label class="container solid">2 lbs. ground beef
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">2 lbs. groun turkey
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">2 cans tuna, in water
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">1/2 lb. chicken
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">1/2 cup cottage cheese
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">3 eggs
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">1 cup white rice
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">6 oz. squash, green peas,coliflower, broccoli
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">1/2 medium apple
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container solid">3 tbs. coconut oil
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<br>
+<p align="left" style="border-top: 1.00pt solid #000000; border-bottom: 1.00pt solid #000000"><b>INSTRUCTIONS:</b></p>
+<p>Cook rice.
+<p>Cook eggs
+<p>Cook all meat, drain grease.
+<p>Use food processor to grind raw vegies and apple, and egg.
+<p>Add all ingredients together, adding the cottage cheese and coconut oil last.
+<p>Mix well, put into baggies and freeze until needed.
+  <p>I use this food as a suppliment.
+</div>
+</body>
+</html>
