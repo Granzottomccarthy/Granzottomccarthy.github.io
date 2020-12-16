@@ -1,0 +1,132 @@
+<style>
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  display: none; /* Hide all elements by default */
+}
+/* Create header that floats next to each other */
+.header {
+  float: left;
+  width: 100%;
+  display: none; /* Hide all elements by default */
+}
+/* Page Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+/* Catagory images with header Title */
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #;
+  color: black;
+  font-size: 42px;
+  opacity: 0.8;
+}
+/* appetizers Header background */
+div.background-appetizers {
+  background: url(images/appetizers.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* breakfast Header backgrounds */
+div.background-breakfast {
+  background: url(images/breakfast.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* crafts Header backgrounds */
+div.background-crafts {
+  background: url(images/crafts.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* desserts Header backgrounds */
+div.background-desserts {
+  background: url(images/desserts.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* salad Header backgrounds */
+div.background-salad {
+  background: url(images/salads.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* sauces Header backgrounds */
+div.background-sauces {
+  background: url(images/sauces.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* sides eader backgrounds */
+div.background-sides {
+  background: url(images/side-dishes.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* snacks Header backgrounds */
+div.background-snacks {
+  background: url(images/snacks.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* soup Header backgrounds */
+div.background-soup {
+  background: url(images/soups.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* main Header backgrounds */
+div.background-main {
+  background: url(images/main.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* header titles: */
+div.transbox {
+  margin: 30px 25%;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.7;
+}
+div.transbox p {
+  margin: 1%;
+  font-size: 42px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+}
+/* MODAL CLOSE BUTTON */
+.btn-modal {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+}
+.btn-modal:hover {
+  background-color: #f04948;
+  color: white;
+}
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col"] {
+    width: 100%;
+  }
+}
+</style>
