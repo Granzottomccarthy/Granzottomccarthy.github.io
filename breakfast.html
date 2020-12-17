@@ -27,10 +27,6 @@
   background-color: white;
   padding: 10px;
 }
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
 /* Catagory images with header Title */
 .header {
   padding: 50px;
@@ -105,7 +101,7 @@ div.transbox p {
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("column");
+  x = document.getElementsByClassName("none");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
