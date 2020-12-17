@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
 <script>
 /*Add doc to load from other files:*/
 function includeHTML() {
@@ -49,6 +50,16 @@ function w3RemoveClass(element, name) {
 }
 </script>
 <style>
+body {
+  background-image: url("christmas-background2.jpg");
+  background-repeat: no-repeat, repeat;
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1000px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
+}
 /* Add padding BETWEEN each column */
 .row,
 .row > .column {
@@ -57,14 +68,14 @@ function w3RemoveClass(element, name) {
 /* Page Content */
 .content {
   background-color: white;
+  background-color: #cccccc;
   padding: 10px;
 }
-
 /* Catagory images with header Title */
 .header {
   padding: 50px;
   text-align: center;
-  background: #;
+  background: ;
   color: black;
   font-size: 42px;
   opacity: 0.8;
@@ -91,6 +102,7 @@ div.transbox p {
   }
 }
 </style>
+</head>
   <body>
 <!-- Navbar (sit on top) -->
 <div w3-include-html="/navbar.html"></div>
@@ -147,6 +159,7 @@ function w3AddClass(element, name) {
 }
 
 </script>
+
 <style>
   #snowflakeContainer {
     position: absolute;
@@ -179,7 +192,7 @@ function w3AddClass(element, name) {
   var browserHeight;
 
   // Specify the number of snowflakes you want visible
-  var numberOfSnowflakes = 50;
+  var numberOfSnowflakes = 300;
 
   // Flag to reset the position of the snowflakes
   var resetPosition = false;
@@ -200,8 +213,8 @@ function w3AddClass(element, name) {
 
   reduceMotionQuery.addListener(setAccessibilityState);
 
-  //
-  // It all starts here...
+  //SNOW
+  // It all starts here..
   //
   function setup() {
     if (enableAnimations) {
