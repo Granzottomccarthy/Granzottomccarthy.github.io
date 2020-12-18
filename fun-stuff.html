@@ -7,17 +7,14 @@
 <style>
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
-
 .mySlides {display: none;}
 img {vertical-align: middle;}
-
 /* Slideshow container */
 .w3-display-container {
   max-width: 600px;
   position: relative;
   margin: auto;
 }
-
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
@@ -25,7 +22,6 @@ img {vertical-align: middle;}
 </style>
 </head>
 <body>
-
 <h2 class="w3-center">YOU FOUND A HIDDEN PAGE... ENJOY.</h2>
 <p class="w3-center"> USE THE ARROWS TO SELECT THE NEXT IMAGE
 <div class="w3-content w3-display-container">
@@ -37,15 +33,12 @@ img {vertical-align: middle;}
 <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
 <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
-
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
-
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
-
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -57,6 +50,5 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
 }
 </script>
-
 </body>
 </html>
