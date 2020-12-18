@@ -8,21 +8,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {font-family: "Lato", sans-serif}
+/* Animate icons in nave bar to flip 180 deg on hover */
 .w3-button:hover .fa {
     transition: transform 0.7s;
     transform: rotate(180deg);
   }
-  /* Create header that floats next to each other */
+  /* Hide recipe header on load */
   .header {
-    float: left;
-    width: 100%;
     display: none; /* Hide all elements by default */
 }
-/* Create four equal columns that floats next to each other */
+/* hide recipes on load */
 .column {
-  float: left;
-  width: 25%;
-  text-align: center;
     display: none; /* Hide all elements by default */
   }
 </style>
@@ -94,7 +90,7 @@ body {font-family: "Lato", sans-serif}
   </div>
 </div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<!-- Navbar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-top" style="margin-top:46px">
 
   <div class="w3-dropdown-hover">
