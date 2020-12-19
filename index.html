@@ -2,11 +2,11 @@
 <html  lang="en">
 <title>FAMILY COOKBOOK</title>
 <meta charset="UTF-8">
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<head>
 <script>
 /*Add doc to load from other files:*/
 function includeHTML() {
@@ -38,6 +38,10 @@ function includeHTML() {
 };
 </script>
 <style>
+/* UNSURE OF WHAT THIS MAY DO. https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_media_columns */
+* {
+  box-sizing: border-box;
+}
 /* Create four equal columns that floats next to each other */
 .column {
   float: left;
@@ -45,26 +49,28 @@ function includeHTML() {
   padding: 8px;
   display: none; /* Hide all elements by default */
 }
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
 /* Create header that floats next to each other */
 .header {
   float: left;
   width: 100%;
   padding: 50px;
   display: none; /* Hide all elements by default */
-  text-align: center;
-  background: ;
-  color: black;
-  font-size: 42px;
-  opacity: 0.8;
 }
-/* The "show" class is added to the filtered elements */
+/* The "show" class is added to the filtered elements ALLOWS THE NAVBAR BUTTONS TO WORK */
 .show {
   display: block;
-}
-/* Page Content */
-.content {
-  background-color: white;
-  padding: 10px;
 }
 /* Header backgrounds */
 div.background-main {
@@ -140,28 +146,7 @@ div.transbox p {
   font-weight: bold;
   color: #000000;
 }
-/* UNSURE OF WHAT THIS MAY DO. https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_media_columns */
-* {
-  box-sizing: border-box;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* On screens that are 992px wide or less, go from four columns to two columns */
-@media screen and (max-width: 992px) {
-  .column {
-    width: 50%;
-  }
-}
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
+
 /* MODAL CLOSE BUTTON */
 .btn-modal {
   background-color: #ddd;
