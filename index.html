@@ -47,6 +47,7 @@ function includeHTML() {
 .column {
   float: left;
   width: 25%;
+  padding: 8px;
   display: none; /* Hide all elements by default */
 }
 /* Create header that floats next to each other */
@@ -144,9 +145,24 @@ div.transbox p {
   font-weight: bold;
   color: #000000;
 }
-/* For mobile phones: */
+/* UNSURE OF WHAT THIS MAY DO. https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_media_columns */
+* {
+  box-sizing: border-box;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  /* For mobile phones: */
   .column {
     width: 100%;
   }
