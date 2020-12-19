@@ -38,6 +38,11 @@ function includeHTML() {
 };
 </script>
 <style>
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
 /* Create four equal columns that floats next to each other */
 .column {
   float: left;
@@ -49,8 +54,8 @@ function includeHTML() {
 .header {
   float: left;
   width: 100%;
-  display: none; /* Hide all elements by default */
   padding: 50px;
+  display: none; /* Hide all elements by default */
   text-align: center;
   background: ;
   color: black;
