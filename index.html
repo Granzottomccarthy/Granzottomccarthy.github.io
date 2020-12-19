@@ -66,6 +66,11 @@ function includeHTML() {
 .show {
   display: block;
 }
+/* Page Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
 /* Header backgrounds */
 div.background-main {
   background: url(images/main.jpg) repeat;
@@ -143,7 +148,7 @@ div.transbox p {
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  [class*="column"] {
+  [class*="w3-col"] {
     width: 100%;
   }
 }
@@ -161,6 +166,10 @@ div.transbox p {
   background-color: #f04948;
   color: white;
 }
+/* Modal header color */
+.w3-container {
+  background-color: #00b4ae;
+}
 </style>
 </head>
   <body>
@@ -169,7 +178,7 @@ div.transbox p {
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1600px;margin-top:50px">
   <p class="w3-center w3-large"><b>THE FAMILY COOKBOOK</b></p>
-  <p class="w3-left w3-large w3-padding">Want to add a recipe? Have a comment on a recipe? Do you have a tip for a recipe or want to include your own spin on it? We would love to add it. Please contact us by email at <a href="mailto:granzottomccarthy@gmail.com">granzottomccarthy@gmail.com</a>.</p>
+  <p class="w3-large w3-padding">Want to add a recipe? Have a comment on a recipe? Do you have a tip for a recipe or want to include your own spin on it? We would love to add it. Please contact us by email at <a href="mailto:granzottomccarthy@gmail.com">granzottomccarthy@gmail.com</a>.</p>
 <!--* main dishes */-->
 <div w3-include-html="main.html"></div>
 <!--* Appetizers */-->
