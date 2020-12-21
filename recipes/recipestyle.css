@@ -1,7 +1,13 @@
 <style>
 html,body {font-family:"Verdana",sans-serif}
 h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
-
+body {font-family: Arial, Helvetica, sans-serif;}
+.inst {
+  position: left;
+  border-top: 1.00pt solid #000000;
+  border-bottom: 1.00pt solid #000000
+}
+/* USED FOR RECIPE CHECKBOXES */
   /* The container */
 .container {
   display: block;
@@ -15,7 +21,6 @@ h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
   -ms-user-select: none;
   user-select: none;
 }
-
 /* Hide the browser's default checkbox */
 .container input {
   position: absolute;
@@ -24,7 +29,6 @@ h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
   height: 0;
   width: 0;
 }
-
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
@@ -37,29 +41,24 @@ h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
   align-content: center;
   background-color: #d9d9d9;
 }
-
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
   background-color: #ccc;
 }
-
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: #2196F3;
 }
-
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
   display: block;
 }
-
 /* Style the checkmark/indicator */
 .container .checkmark:after {
   left: 5.5px;
