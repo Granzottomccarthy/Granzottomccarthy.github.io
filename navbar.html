@@ -17,31 +17,7 @@ body {font-family: "Lato", sans-serif}
       transition: transform 0.7s;
       transform: rotate(180deg);
     }
-    /* navbar small dropdowns */
-      .dropbtn {
-        color: black;
-        padding: 11px;
-        border: none;
-        cursor: pointer;
-      }
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        overflow: auto;
-        z-index: 1;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        display: block;
-      }
-      .show {display: block;}
+
 
 </style>
 <body>
@@ -69,7 +45,6 @@ body {font-family: "Lato", sans-serif}
         <a class="w3-bar-item w3-button" href="coming-soon.html"> Coming Soon...</a>
       </div>
     </div>
-    <br>
     <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
       <button class="w3-padding-large w3-button" title="INGREDIANT">INGREDIANT <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -87,7 +62,6 @@ body {font-family: "Lato", sans-serif}
         <a class="w3-bar-item w3-button" onclick="filterSelection('Vegetables')"> Vegetables</a>
       </div>
     </div>
-    <br>
     <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
       <button class="w3-padding-large w3-button" title="INGREDIANT">FROM THE KITCHEN OF <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -177,24 +151,15 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
 function myFunction1() {
-  document.getElementById("myDropdown1").classList.toggle("show");
+  document.getElementById("myDropdown1").classList.toggle("ss-show");
 }
 function myFunction2() {
-  document.getElementById("myDropdown2").classList.toggle("show");
+  document.getElementById("myDropdown2").classList.toggle("ss-show");
 }
 function myFunction3() {
-  document.getElementById("myDropdown3").classList.toggle("show");
+  document.getElementById("myDropdown3").classList.toggle("ss-show");
 }
 // Close the dropdown if the user clicks outside of it on small screens
 window.onclick = function(event) {
@@ -203,8 +168,8 @@ window.onclick = function(event) {
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+      if (openDropdown.classList.contains('ss-show')) {
+        openDropdown.classList.remove('ss-show');
       }
     }
   }
