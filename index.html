@@ -38,7 +38,7 @@ function includeHTML() {
 };
 
 // When the user clicks anywhere outside of the small screen dropdown, close it
-window.onclick = function(event) {
+window.onclick = myFunction(event) {
   if (event.target == w3-top) {
     w3-top.style.display = "none";
   }
