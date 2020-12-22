@@ -21,7 +21,7 @@ body {font-family: "Lato", sans-serif}
     /* navbar small dropdowns */
       .dropbtn {
         color: black;
-        padding: 11px;
+        padding: 1px;
         border: none;
         cursor: pointer;
       }
@@ -34,8 +34,6 @@ body {font-family: "Lato", sans-serif}
         position: absolute;
         background-color: #f1f1f1;
         min-width: 160px;
-        overflow: auto;
-        z-index: 1;
       }
       .dropdown-content a {
         color: black;
@@ -43,6 +41,10 @@ body {font-family: "Lato", sans-serif}
         display: block;
       }
       .show {display: block;}
+
+      .w3-button {
+        background-color: #C52B54;
+      }
 </style>
 </head>
 <body>
@@ -111,12 +113,11 @@ body {font-family: "Lato", sans-serif}
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hover-red" onclick="filterSelection('Music')">Music</a>
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hover-red" onclick="filterSelection('Contact')">Contact</a>
     </div>
-  </div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-top" style="margin-top:45px; background-color:#C52B54">
   <div class="dropdown">
-    <a onclick="myFunction1()" class="w3-button dropbtn w3-bar-item">RECIPE <i class="fa fa-caret-down"></i></a>
+    <a onclick="myFunction1()" class="w3-button w3-bar-item">RECIPE <i class="fa fa-caret-down"></i></a>
     <div id="myDropdown1" class="dropdown-content">
       <a class="w3-bar-item w3-button" onclick="filterSelection('menu')"> All Recipes</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Snacks')"> Snacks</a>
@@ -133,7 +134,7 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
   <div class="dropdown">
-    <a onclick="myFunction2()" class="w3-button dropbtn w3-bar-item">INGREDIANT <i class="fa fa-caret-down"></i></a>
+    <a onclick="myFunction2()" class="w3-button w3-bar-item">INGREDIANT <i class="fa fa-caret-down"></i></a>
     <div id="myDropdown2" class="dropdown-content">
       <a class="w3-bar-item w3-button" onclick="filterSelection('Beef')"> Beef</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Bread')"> Bread</a>
@@ -150,7 +151,7 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
   <div class="dropdown">
-    <a onclick="myFunction3()" class="w3-button dropbtn w3-bar-item">FROM THE KITCHEN OF <i class="fa fa-caret-down"></i></a>
+    <a onclick="myFunction3()" class="w3-bar-item w3-button">FROM THE KITCHEN OF <i class="fa fa-caret-down"></i></a>
     <div id="myDropdown3" class="dropdown-content">
       <a class="w3-bar-item w3-button" onclick="filterSelection('Esther')"> Esther Granzotto</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Donaher')"> Grandma Donaher</a>
@@ -168,22 +169,13 @@ body {font-family: "Lato", sans-serif}
       <a class="w3-bar-item w3-button" onclick="filterSelection('Paul')"> Paul Granzotto</a>
     </div>
   </div>
-    <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('About')">About</a>
-    <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('Music')">Music</a>
-    <a class="w3-bar-item w3-button w3-padding-large" onclick="filterSelection('Contact')">Contact</a>
-</div>
+    <a class="w3-bar-item w3-button" onclick="filterSelection('About')">About</a>
+    <a class="w3-bar-item w3-button" onclick="filterSelection('Music')">Music</a>
+    <a class="w3-bar-item w3-button" onclick="filterSelection('Contact')">Contact</a>
 </div>
 </div>
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
 function myFunction1() {
   document.getElementById("myDropdown1").classList.toggle("show");
