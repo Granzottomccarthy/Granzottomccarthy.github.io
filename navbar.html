@@ -17,6 +17,32 @@ body {font-family: "Lato", sans-serif}
       transition: transform 0.7s;
       transform: rotate(180deg);
     }
+    /* navbar small dropdowns */
+      .dropbtn {
+        color: black;
+        padding: 11px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+      }
+      .show {display: block;}
+
 </style>
 <body>
 <!-- Navbar (sit on top) -->
@@ -151,6 +177,15 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 <script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
 function myFunction1() {
   document.getElementById("myDropdown1").classList.toggle("show");
