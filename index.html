@@ -36,15 +36,7 @@ function includeHTML() {
     }
   }
 };
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+
 // When the user clicks anywhere outside of the modal, close it
 var modal = document.getElementById('modal01; modal02; modal03');
 window.onclick = function(event) {
@@ -100,6 +92,41 @@ body {
 .show {
   display: block;
 }
+.w3-button:hover .fa-caret-down {
+    transition: transform 0.7s;
+    transform: rotate(180deg);
+  }
+  .w3-button:hover .fa-bars {
+      transition: transform 0.7s;
+      transform: rotate(180deg);
+    }
+    /* navbar small screen dropdowns */
+      .dropbtn {
+        color: black;
+        padding: 1px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+      }
+      .show {display: block;}
+
+      .w3-button {
+        background-color: #C52B54;
+      }
 /* Header backgrounds */
 div.background-main {
   background: url(images/main.jpg) repeat;
@@ -261,6 +288,25 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
+}
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+/* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
+function myFunction1() {
+  document.getElementById("myDropdown1").classList.toggle("show");
+}
+function myFunction2() {
+  document.getElementById("myDropdown2").classList.toggle("show");
+}
+function myFunction3() {
+  document.getElementById("myDropdown3").classList.toggle("show");
 }
 </script>
 </body>
