@@ -41,7 +41,7 @@ body {font-family: "Lato", sans-serif}
         padding: 12px 16px;
         display: block;
       }
-      .ss-show {display: block;}
+      .show {display: block;}
 </style>
 <body>
 <!-- Navbar (sit on top) -->
@@ -185,27 +185,15 @@ function myFunction() {
 }
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
 function myFunction1() {
-  document.getElementById("myDropdown1").classList.toggle("ss-show");
+  document.getElementById("myDropdown1").classList.toggle("show");
 }
 function myFunction2() {
-  document.getElementById("myDropdown2").classList.toggle("ss-show");
+  document.getElementById("myDropdown2").classList.toggle("show");
 }
 function myFunction3() {
-  document.getElementById("myDropdown3").classList.toggle("ss-show");
+  document.getElementById("myDropdown3").classList.toggle("show");
 }
-// Close the dropdown if the user clicks outside of it on small screens
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('ss-show')) {
-        openDropdown.classList.remove('ss-show');
-      }
-    }
-  }
-}
+
 </script>
 
 </body>
