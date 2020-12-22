@@ -37,10 +37,9 @@ function includeHTML() {
   }
 };
 
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('w3-modal');
+// When the user clicks anywhere outside of the small screen dropdown, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target == w3-top) {
     modal.style.display = "none";
   }
 }
