@@ -2,6 +2,7 @@
 <html lang="en">
 <title>NAVBAR</title>
 <meta charset="UTF-8">
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
@@ -43,6 +44,7 @@ body {font-family: "Lato", sans-serif}
       }
       .show {display: block;}
 </style>
+</head>
 <body>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -172,9 +174,16 @@ body {font-family: "Lato", sans-serif}
 </div>
 </div>
 </div>
-
 <script>
-
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
 function myFunction1() {
   document.getElementById("myDropdown1").classList.toggle("show");
@@ -185,8 +194,6 @@ function myFunction2() {
 function myFunction3() {
   document.getElementById("myDropdown3").classList.toggle("show");
 }
-
 </script>
-
 </body>
 </html>
