@@ -36,14 +36,7 @@ function includeHTML() {
     }
   }
 };
-/*
-//When the user clicks anywhere outside of the small screen dropdown, close it
-window.onclick = myFunction(event) {
-  if (event.target == button) {
-    button.style.display = "none";
-  }
-}
-*/
+
 
 </script>
 <style>
@@ -109,15 +102,16 @@ body {
         position: relative;
         display: inline-block;
       }
-      .dropdown-content {
+      .w3-dropdown-content {
         display: none;
         position: relative;
-        background-color: #328000;/* CHRISTMAS RED */
+        background-color: #328000;/* CHRISTMAS green */
         min-width: 160px;
       }
-      .dropdown-content a {
+      .w3-dropdown-content a {
         color: black;
         padding: 12px 16px;
+        background-color: #328000;/* CHRISTMAS green */
         display: block;
       }
       .show {display: block;
@@ -296,16 +290,7 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-/* When the user clicks on the button, toggle between hiding and showing the dropdown content on small screens*/
-function myFunction1() {
-  document.getElementById("myDropdown1").classList.toggle("show");
-}
-function myFunction2() {
-  document.getElementById("myDropdown2").classList.toggle("show");
-}
-function myFunction3() {
-  document.getElementById("myDropdown3").classList.toggle("show");
-}
+
 </script>
 </body>
 </html>
