@@ -4,8 +4,8 @@ h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI",sans-serif}
 body {font-family: Arial, Helvetica, sans-serif;}
 .inst {
   position: left;
-  border-top: 1.00pt solid #000000;
-  border-bottom: 1.00pt solid #000000
+  border-top: 1.00pt solid #000000;/* black line */
+  border-bottom: 1.00pt solid #000000/* black line */
 }
 /* USED FOR RECIPE CHECKBOXES */
   /* The container */
@@ -39,15 +39,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border-style: solid;
   border-width: 1px;
   align-content: center;
-  background-color: #d9d9d9;
+  background-color: #d9d9d9;/* very light grey */
 }
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #ccc;/* light grey */
 }
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #2196F3;/* light blue */
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
@@ -70,5 +70,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.w3-button {
+  background-color: #C52B54;/* Dingy Dungeon CHRISTMAS RED */
 }
 </style>
