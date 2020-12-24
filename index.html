@@ -288,6 +288,15 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+// Used to toggle the dropdown on small screens when clicking on the dropdown button
+function myFunction() {
+  var x = document.getElementById("smdrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 </script>
 </body>
 </html>

@@ -81,8 +81,8 @@ body {font-family: "Lato", sans-serif}
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="menu w3-bar-block w3-hide w3-hide-large w3-top" style="margin-top:45px; background-color:#C52B54">
   <div class="w3-dropdown-click">
-      <button class="w3-button" style="background-color:#C52B54">RECIPE <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <button onclick="myFunction()" class="w3-button" style="background-color:#C52B54">RECIPE <i class="fa fa-caret-down"></i></button>
+      <div id="smdrop" class="w3-dropdown-content w3-bar-block w3-card-4">
       <a class="w3-bar-item w3-button" onclick="filterSelection('menu'); myFunction()"> All Recipes</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Snacks'); myFunction()"> Snacks</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Appetizers'); myFunction()"> Appetizers</a>
@@ -98,8 +98,8 @@ body {font-family: "Lato", sans-serif}
   </div>
   <br>
   <div class="w3-dropdown-click">
-      <button class="w3-button">INGREDIANT <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <button onclick="myFunction()" class="w3-button">INGREDIANT <i class="fa fa-caret-down"></i></button>
+      <div id="smdrop" class="w3-dropdown-content w3-bar-block w3-card-4">
       <a class="w3-bar-item w3-button" onclick="filterSelection('Beef'); myFunction()"> Beef</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Bread'); myFunction()"> Bread</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Cheese'); myFunction()"> Cheese</a>
@@ -116,8 +116,8 @@ body {font-family: "Lato", sans-serif}
   </div>
   <br>
   <div class="w3-dropdown-click">
-      <button class="w3-button">FROM THE KITCHEN OF <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <button onclick="myFunction()" class="w3-button">FROM THE KITCHEN OF <i class="fa fa-caret-down"></i></button>
+      <div id="smdrop" class="w3-dropdown-content w3-bar-block w3-card-4">
       <a class="w3-bar-item w3-button" onclick="filterSelection('Esther'); myFunction()"> Esther Granzotto</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('Donaher'); myFunction()"> Grandma Donaher</a>
       <a class="w3-bar-item w3-button" onclick="filterSelection('James'); myFunction()"> James Granzotto</a>
