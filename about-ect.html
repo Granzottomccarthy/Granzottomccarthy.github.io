@@ -1,64 +1,47 @@
 <!DOCTYPE html>
 <html>
-<title>GIFS</title>
+<title>ABOUT-ECT</title>
 <meta charset="UTF-8">
-
+<meta name="google-site-verification" content="EyT9eGHchNr_f6jhlp2TWrK-0PGuHkiK3fyxkh7vyZ0" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-/* Slideshow container */
-.w3-display-container {
-  max-width: 600px;
-  position: relative;
-  margin: auto;
-}
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-</style>
 <body>
-<h2 class="w3-center">YOU FOUND A HIDDEN PAGE... ENJOY.</h2>
 
-<p class="w3-center"> USE THE ARROWS TO SELECT THE NEXT IMAGE
-<div class="w3-content w3-display-container">
-  <img class="mySlides" src="gif/family-guy-italian.gif" style="width:100%">
-  <img class="mySlides" src="gif/simpsons-float.gif" style="width:100%">
-  <img class="mySlides" src="gif/meetballs.gif" style="width:100%">
-  <img class="mySlides" src="gif/proud-irish.gif" style="width:100%">
-<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-</div>
-<div class="w3-center">
-  <a href="fun-stuff.html" target="_blank"><img src="https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/17.svg" class="w3-center w3-padding w3-round w3-image w3-opacity-min" alt="Table Setting" width="300" height="375"></a>
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1600px;margin-top:100px">
+
+  <!-- About Section -->
+  <div style="width:100%" class="w3-center column About" id="about">
+    <div class="w3-col m6">
+     <a href="fun-stuff.html" target="_blank"><img src="images/history.jpg" class="w3-right w3-padding w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750"></a>
     </div>
- /* NOT ABLE TO GET TO CENTER AND SEPERATE FROM OTHER IFRAMES (24-jan-2022) */
- /*  div style="overflow: hidden; margin-top: -212px; margin-left:-10;">
-    /* iframe class="w3-center" width="1200" height="150" src="redwings.html"> /iframe> */
-      /*   /div> */
- /* div style="overflow: hidden; margin-top: -212px; margin-left:-10;"> */
-   /*   iframe src="https://www.nhl.com/redwings" scrolling="no" height="345"width="1200" frameBorder="0"> /iframe> */
-     /*    /div> */
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>
+    <div class="w3-left w3-padding w3-col m6 ">
+      <h1 class="w3-center">About Cookbook</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large w3-left-align">It is the hope of this website to host those traditional dishes we all loved, as well as those we hope to become tradition.
+      <p class="w3-large w3-left-align">This website contains many recipes that were originally put together by Kim & John Granzotto in 2004 in printed form and given as Christmas gifts.
+      <p class="w3-large w3-left-align"></p>
+    </div>
+  </div>
+
+  <!-- Music Section -->
+  <br>
+  <div style="width:100%" class="w3-column column Music" id="music">
+    <div class="w3-center">
+      <h1>Greetings!</h1><br>
+        <iframe width="420" height="345" src="https://www.youtube.com/embed/2S7BvkDN0hw"></iframe>
+        <iframe width="420" height="345" src="https://www.youtube.com/embed/kJCxTgrbB6c"></iframe>
+        <p>Have a suggestion? Contact us by email at <a href="mailto:granzottomccarthy@gmail.com">granzottomccarthy@gmail.com</a>.</p>
+
+    </div>
+  </div>
+
+<!-- Contact Section -->
+  <div style="width:100%" class="w3-panel w3-padding column Contact" id="contact">
+    <h1 class="w3-center">Contact</h1><br>
+    <p class="w3-center">Contact us by email at <a href="mailto:granzottomccarthy@gmail.com">granzottomccarthy@gmail.com</a>.</p>
+    
+  </div>
+      </div>
+        </div>
 </body>
 </html>
