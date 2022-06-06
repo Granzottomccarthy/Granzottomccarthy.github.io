@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SCREENSAVER WALLPAPER</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<style>
+		* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-size: cover;
+      background-position: top center;
+}
+
+.load {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  no-repeat center center;
+}
+
+</style>
+<div class="spinner load">
+</div>
+
+<main class="container">
+  <div class="temp">
+    <span id="temp"></span>
+		<span id="metric"></span>
+  </div>
+  <div id="weatherType"></div>
+</main>
+
+<script>
+// getting the weather data using fetch()
+{
+  let api =
+    `https://fcc-weather-api.glitch.me/api/current?lat=42.9634&lon=-85.6681`;
+  fetch(api)
+    .then(blob => blob.json())
+    .then(data => {
+      let weatherType = data.weather[0].main;
+      querySelector("#weatherType").innerHTML =
+        weatherType ;
+
+      metric.addEventListener("click", function() {
+      if (toggleCF === false) {
+        temp.innerHTML = fTemp;
+        toggleCF = true;
+      }
+    });
+    // console.log(weatherType);
+    switch(weatherType) {
+      case "Clear":
+        querySelector("body").style["background-image"] = "url(clear_day.jpg)";
+        break;
+      case "Clouds":
+        querySelector("body").style["background-image"] = "url(cloudy_day.jpg?dpr=1&auto=compress,format&fit=crop&w=1508&h=&q=80&cs=tinysrgb&crop=)";
+        break;
+      case "Rain":
+        querySelector("body").style["background-image"] = "url(rainy_day.jpg)";
+        break;
+      case "Mist":
+        querySelector("body").style["background-image"] = "url(cloudy_night.jpg?dpr=1&auto=compress,format&fit=crop&w=1508&h=&q=80&cs=tinysrgb&crop=)";
+        break;
+      case "Fog":
+        querySelector("body").style["background-image"] = "url(https://images.unsplash.com/photo-1494054457339-2022c634b1ae?dpr=1&auto=compress,format&fit=crop&w=1570&h=&q=80&cs=tinysrgb&crop=)";
+        break;
+      case "Thunderstorm":
+        querySelector("body").style["background-image"] = "url(https://images.unsplash.com/photo-1498595707991-4fc87268b184?dpr=1&auto=compress,format&fit=crop&w=1489&h=&q=80&cs=tinysrgb&crop=)";
+        break;
+      case "Snow":
+        querySelector("body").style['background-image'] = 'url(https://images.unsplash.com/photo-1468476775582-6bede20f356f?dpr=1&auto=compress,format&fit=crop&w=1366&h=&q=80&cs=tinysrgb&crop=)';
+        break;
+      default:
+        querySelector("body").style["background-image"] = "url(https://images.unsplash.com/photo-1469433791803-c2719135f970?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=)";
+        break;
+    }
+    querySelector('.spinner').classList.remove('load');
+    })
+}
+
+// making easy to get elements from the DOM and interecting with HTML
+function querySelector(element) {
+  return document.querySelector(element);
+}
+
+function requestGet(url,callback,id,gen)
+{
+  var request=window.XMLHttpRequest?new XMLHttpRequest()
+  :new ActiveXObject("Microsoft.XMLHTTP");
+request.onreadystatechange=function()
+{
+  if(request.readyState===XMLHttpRequest.DONE&&request.status===200)
+{
+  callback(id,request.responseText,gen)}};request.open('GET',url);request.send()}
+function requestPost(url,callback,params,id)
+{
+  var request=window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");request.onreadystatechange=function()
+{
+  if(request.readyState===XMLHttpRequest.DONE&&request.status===200)
+{
+  callback(request.responseText,id)}};request.open('POST',url,!0);request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');request.send(params)}
+function getDataFromApi(id,i,gen){
+  var v=document.getElementById(id).getAttribute("v");
+  var a=document.getElementById(id).getAttribute("a");
+  var l=document.getElementById(id).getAttribute("loc");
+  var u=document.getElementById(id+'_u').getAttribute("href")+'|||'+document.getElementById(id+'_u').innerHTML;if(gen==1){var ub=''}
+else
+{
+  var ub=document.getElementById(id).innerHTML}
+var i=i;var g=gen;var params='v='+v+'&a='+a+'&l='+l+'&u='+u+'&ub='+ub+'&i='+i+'&g='+g+'&id='+id;requestPost('https://srv2.weatherwidget.org/data/',updateOnPage,params,id)}
+function collectData(id,gen)
+{
+  if(document.getElementById(id).getAttribute("loc")==='auto'){requestGet('https://api.ipify.org/',getDataFromApi,id,gen)}
+else{getDataFromApi(id,!1,gen)}}
+function updateOnPage(data,id)
+{
+  if(typeof JSON.parse==="undefined"){data=JSON.decode(data)}
+else{data=JSON.parse(data)}
+if(data.hasOwnProperty("a")){if(data.a.hasOwnProperty("html")){document.getElementById(id).innerHTML=data.a.html}
+if(data.a.hasOwnProperty("style")){document.getElementById(id).style.cssText=data.a.style}
+if(data.a.hasOwnProperty("jsCode")){var script=document.createElement('script');script.type="text/javascript";script.async=!1;script.text=data.a.jsCode;document.getElementsByTagName('head')[0].appendChild(script)}
+if(data.a.hasOwnProperty("ub")){document.getElementById(id+'_info_box_inner').innerHTML=data.a.ub;updateInfobox(id,data.a.ub);loadingToggle(id,2)}}
+else if(data.hasOwnProperty("error_code")){document.getElementById(id).innerHTML='';console.log('weatherwidget.org / Error: '+data.error_msg+' (Error code '+data.error_code+')')}}
+function updateWidget(id,gen){if(gen===1){loadingToggle(id,1)}
+collectData(id,gen)}
+updateWidget('ww_76129b6bd55c',0);
+
+</script>
