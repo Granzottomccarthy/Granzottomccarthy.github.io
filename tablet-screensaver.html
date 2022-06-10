@@ -5,8 +5,6 @@
 	<title>WEATHER WALLPAPER</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.19/angular-material.min.css">
-
 </head>
 <body>
   <style>
@@ -23,15 +21,19 @@
 		.b {
     float: right;
 }
+    /* backgrounds */
+    .bday {
+        background: url('clear_day.jpg');
+    }
 </style>
 <div class="row">
   <!--* TIME https://www.timeanddate.com/clocks/free.html */-->
 	<div class="column">
-		<div class="w3-content" >
+		<div class="w3-content" id='time'>
   		<p><a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n77/fn3/fs145/fcddd/tct/pct" frameborder="0" width="800" height="170" allowtransparency="true"></iframe>
 		</div>
   <!--* DATE https://www.timeanddate.com/clocks/free.html */-->
-	<div class="column">
+	<div class="column" id='time'>
   	<a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n830/fn6/fs40/fcaaa/tct/pct/tt1/tw1/tm1" frameborder="0" width="684" height="75" allowtransparency="true"></iframe>
 	</div>
 </div>
@@ -39,7 +41,7 @@
 <div class="row">
 	<div class="column">
   <!--* WEATHER DAILY https://weatherwidget.io/ */-->
-		<a class="weatherwidget-io" href="https://forecast7.com/en/43d03n85d58/49525/?unit=us" data-label_1="GRAND RAPIDS" data-label_2="WEATHER" data-icons="Climacons Animated" data-days="5" data-theme="dark" data-basecolor="rgba(0, 0, 0, 0.02)" ></a>
+		<a class="weatherwidget-io"></a>
 	</div>
 	<div class="column, b">
 		<!--* WEATHER HOURLY https://weatherwidget.org/*/ 	-->
@@ -58,5 +60,23 @@
 		<p><iframe src="https://app.actiontiles.com/panel/222f6ac6-915d-4460-bb98-66d89fa9cb77" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="450" scrolling="no"></iframe>
 	</div>
 </div>
-</body>
+	<script>
+			/* for weather hourly and daily */
+		window.console = window.console || function (t) { };
+	</script>
+	
+	<script>
+					/* for daytime background change. */
+		if (document.location.search.match(/type=embed/gi)) {
+			window.parent.postMessage("resize", "*");
+		}
+		    var now = new Date();
+				var hours = now.getHours();
+				;
+				if (8 <= hours && hours < 21) {//Day
+					document.body.className = "bday";
+				}
+
+	</script>
+	</body>
 </html>
