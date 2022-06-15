@@ -29,23 +29,15 @@
 <!--* TIME DAY https://www.timeanddate.com/clocks/free.html */-->
 	<div class="column">
 		<div id="textdayt">
-	 	 <p><a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n77/fn3/fs145/fcfff/tct/pct" frameborder="0" width="800" height="170" allowtransparency="true"></iframe></a></p>
+	 	 <p><a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n77/fn3/fs145/fcaaa/tct/pct" frameborder="0" width="800" height="170" allowtransparency="true"></iframe></a></p>
 		</div>
 <!--* DATE DAY https://www.timeanddate.com/clocks/free.html */-->
 		<div id="textdayd">
-			<a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n830/fn6/fs40/fcfff/tct/pct/tt1/tw1/tm1" frameborder="0" width="684" height="75" allowtransparency="true"></iframe></a>
-		</div>
-		<div class="column">
-<!--* TIME NIGHT https://www.timeanddate.com/clocks/free.html */-->
-		<div id="textnightt">
-		<p><a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n77/fn3/fs145/fcaaa/tct/pct" frameborder="0" width="800" height="170" allowtransparency="true"></iframe></a></p>
-		</div>
-<!--* DATE NIGHT https://www.timeanddate.com/clocks/free.html */-->
-		<div id="textnightd">
 			<a><iframe src="https://free.timeanddate.com/clock/i8cprin9/n830/fn6/fs40/fcaaa/tct/pct/tt1/tw1/tm1" frameborder="0" width="684" height="75" allowtransparency="true"></iframe></a>
 		</div>
-
-	</div>	</div>
+		<div class="column">
+	</div>
+</div>
 <div class="row">
 	<div class="column">
   <!--* WEATHER DAILY https://weatherwidget.io/ */-->
@@ -53,12 +45,12 @@
 	</div>
 	<div class="column, right">
 		<!--* WEATHER HOURLY https://weatherwidget.org/ 	-->
-		<div id="ww_380a170100276" v='1.20' loc='id' a='{"t":"horizontal","lang":"en","ids":["wl1789"],"cl_bkg":"#FFFFFF00","cl_font":"#ffffff","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_sot":"fahrenheit","sl_ics":"one_a","font":"Arial"}'>Weather Data Source: <a href="https://sharpweather.com/weather_grand_rapids/" id="ww_380a170100276_u" target="_blank">Weather Grand Rapids</a></div><script async src="https://srv2.weatherwidget.org/js/?id=ww_380a170100276"></script>
+		<div id="ww_380a170100276" v='1.20' loc='id' a='{"t":"horizontal","lang":"en","ids":["wl1789"],"cl_bkg":"#FFFFFF00","cl_font":"#aaaaaa","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_sot":"fahrenheit","sl_ics":"one_a","font":"Arial"}'>Weather Data Source: <a href="https://sharpweather.com/weather_grand_rapids/" id="ww_380a170100276_u" target="_blank">Weather Grand Rapids</a></div><script async src="https://srv2.weatherwidget.org/js/?id=ww_380a170100276"></script>
 	</div>
 	</div>
 	<div class="column">
 		<!--* WEATHER DAILY https://weatherwidget.org/ 	-->
-		<div id="ww_f24f1827c0871" v='1.20' loc='id' a='{"t":"responsive","lang":"en","ids":["wl1789"],"cl_bkg":"#FFFFFF00","cl_font":"#ffffff","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"7","sl_sot":"fahrenheit","sl_ics":"one_a","font":"Arial","el_nme":3,"el_ctm":3,"el_cwi":3,"cl_odd":"#00000000"}'>Weather Data Source: <a href="https://sharpweather.com/weather_grand_rapids/" id="ww_f24f1827c0871_u" target="_blank">Weather Grand Rapids</a></div><script async src="https://srv2.weatherwidget.org/js/?id=ww_f24f1827c0871"></script>		</div>
+		<div id="ww_f24f1827c0871" v='1.20' loc='id' a='{"t":"responsive","lang":"en","ids":["wl1789"],"cl_bkg":"#FFFFFF00","cl_font":"#aaaaaa","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"7","sl_sot":"fahrenheit","sl_ics":"one_a","font":"Arial","el_nme":3,"el_ctm":3,"el_cwi":3,"cl_odd":"#00000000"}'>Weather Data Source: <a href="https://sharpweather.com/weather_grand_rapids/" id="ww_f24f1827c0871_u" target="_blank">Weather Grand Rapids</a></div><script async src="https://srv2.weatherwidget.org/js/?id=ww_f24f1827c0871"></script>		</div>
 	</div>
 </div>
 	<!-- ACTION TILES page content -->
@@ -88,8 +80,6 @@
       console.log(n);
 	  	/* NIGHT CHANGE. */
       if (n == 23 || n < 7) {
-		document.getElementById('textdayt').style.display = "none";
-		document.getElementById('textdayd').style.display = "none";
 	// getting the weather data using fetch()
 	  let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&appid=0263cf82697b01a485e30dbce21bd8a5`;
 	  fetch(api)
@@ -143,9 +133,7 @@
 	else {
 			  	/* DAY CHANGE. */
 		document.body.className = "bday";
-		document.getElementById('textnightt').style.display = "none";
-		document.getElementById('textnightd').style.display = "none";
-		{
+	{
 	  let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&appid=0263cf82697b01a485e30dbce21bd8a5`;
 	  fetch(api)
 		.then(blob => blob.json())
