@@ -80,29 +80,20 @@
 </script>
 <script>
 	/* for time and date background change. */
-		if (document.location.search.match(/type=embed/gi)) {
-			window.parent.postMessage("resize", "*");
-		}
-		    var now = new Date();
-			var hours = now.getHours();
-				if (8 <= hours && hours < 22) {//Day
-					document.getElementById('textnightt').style.display = "none";
-					document.getElementById('textnightd').style.display = "none";
-        			}
-				if (22 <= hours && hours < 8) {//Night
-					document.getElementById('textdayt').style.display = "none";
-					document.getElementById('textdayd').style.display = "none";
-				}
-</script>
-<script>
+	function change_background() {
+      var d = new Date();
+      var n = d.getHours();
+      console.log(n);
+	  	/* NIGHT CHANGE. */
+      if (n == 23 || n < 7) {
+		document.getElementById('textdayt').style.display = "none";
+		document.getElementById('textdayd').style.display = "none";
 	// getting the weather data using fetch()
-	{
-	  let api =
-		`https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&appid=0263cf82697b01a485e30dbce21bd8a5`;
+	  let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&appid=0263cf82697b01a485e30dbce21bd8a5`;
 	  fetch(api)
 		.then(blob => blob.json())
 		.then(data => {
-		  let main = data.weather[0].main;
+		  let main = data.weather[0].description;
 		  querySelector("#weatherType").innerHTML =
 			weatherType ;
 	
@@ -114,11 +105,20 @@
 		});
 		// weatherType;
 		switch(main) {
-		  case "Clear":
-			querySelector("body").style["background-image"] = "url(clear.jpg)";
+		  case "clear sky":
+			querySelector("body").style["background-image"] = "url(clear-night.jpg)";
 			break;
-		  case "Clouds":
-			querySelector("body").style["background-image"] = "url(cloudy.jpg)";
+		  case "few clouds":
+			querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+			break;
+		  case "scattered clouds":
+			querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+			break;
+		case "broken clouds":
+			querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+			break;
+		case "overcast clouds":
+			querySelector("body").style["background-image"] = "url(overcast-clouds.jpg)";
 			break;
 		  case "Rain":
 			querySelector("body").style["background-image"] = "url(rainy.jpg)";
@@ -136,13 +136,73 @@
 			querySelector("body").style['background-image'] = 'url(snow.gif)';
 			break;
 		}
-		querySelector('.spinner').classList.remove('load');
 		})
 	}
+	else {
+			  	/* DAY CHANGE. */
+		document.body.className = "bday";
+		document.getElementById('textnightt').style.display = "none";
+		document.getElementById('textnightd').style.display = "none";
+		{
+	  let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&appid=0263cf82697b01a485e30dbce21bd8a5`;
+	  fetch(api)
+		.then(blob => blob.json())
+		.then(data => {
+		  let main = data.weather[0].description;
+		  querySelector("#weatherType").innerHTML =
+			weatherType ;
+	
+		  metric.addEventListener("click", function() {
+		  if (toggleCF === false) {
+			temp.innerHTML = fTemp;
+			toggleCF = true;
+		  }
+		});
+		// weatherType;
+		switch(main) {
+		  case "clear sky":
+			querySelector("body").style["background-image"] = "url(clear.jpg)";
+			break;
+		  case "few clouds":
+			querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+			break;
+		  case "scattered clouds":
+			querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+			break;
+		case "broken clouds":
+			querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+			break;
+		case "overcast clouds":
+			querySelector("body").style["background-image"] = "url(overcast-clouds.jpg)";
+			break;
+		  case "Rain":
+			querySelector("body").style["background-image"] = "url(rainy.jpg)";
+			break;
+		  case "Mist":
+			querySelector("body").style["background-image"] = "url(mist.jpg)";
+			break;
+		  case "Fog":
+			querySelector("body").style["background-image"] = "url(fog.jpg)";
+			break;
+		  case "Thunderstorm":
+			querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+			break;
+		  case "Snow":
+			querySelector("body").style['background-image'] = 'url(snow.gif)';
+			break;
+		}
+		})
+	}
+      }
+}
+    change_background();
 	// making easy to get elements from the DOM and interecting with HTML
 	function querySelector(element) {
 	  return document.querySelector(element);
 	}
+	setTimeout(function() {
+  location.reload();
+}, 1800000);
 </script>	
 </body>
 </html>
