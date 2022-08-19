@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>forcast-daily</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<style>
+		body {
+    		background-color : transparent;
+		}
+		/* Create two equal columns that floats next to each other */
+		.column {
+			display: grid;
+			float: left;
+			width: 14.28%;
+			padding: 0px;
+			text-align: center;
+			align-content: center;
+			gap: 0px;
+		}
+		.timeValue {
+			color:#fcffff;
+			font-family: Arial,Helvetica,sans-serif;
+		    font-size: 75%;
+    		opacity: .7;
+  			vertical-align: text-bottom;
+			margin:0px 20px 0px 20px;
+		}
+		.tempround {
+			color:#fcffff;
+			font-family: Arial,Helvetica,sans-serif;
+		    font-size: 75%;
+    		opacity: .7;
+  			vertical-align: top;
+			margin:0px 20px 0px 20px;
+		}
+		#weather-icon0, #weather-icon1, #weather-icon2, #weather-icon3, #weather-icon4, #weather-icon5, #weather-icon6 {
+			align-content: center;
+			margin:-10px 20px -10px 20px
+		}
+		/* Set text size and position of current temperature from openweathermap */
+		.tempround:after {
+  			content: " °F";
+		}
+
+	</style>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day0"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon0" id="weather-icon0"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday0"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight0"></div>
+	</div>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day1"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon1" id="weather-icon1"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday1"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight1"></div>
+	</div>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day2"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon2" id="weather-icon2"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday2"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight2"></div>
+	</div>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day3"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon3" id="weather-icon3"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday3"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight3"></div>
+	</div>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day4"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon4" id="weather-icon4"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday4"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight4"></div>
+	</div>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day5"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon5" id="weather-icon5"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday5"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight5"></div>
+	</div>
+	<div class="column">
+		<!-- display next day from openweathermap.*/-->
+		<div class="timeValue" id="day6"></div>
+		<!-- display next day weather icon from openweathermap in top right .*/-->
+		<div class="weather-icon6" id="weather-icon6"><img src="icons/unknown.png" /></div>
+		<!-- display max day temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempday6"></div>
+		<!-- display min night temperature from openweathermap in top right.*/-->
+		<div class="tempround" id="tempnight6"></div>
+	</div>
+
+<script>
+	// PULLING IN CURRENT WEATHER FORCAST, SEE LOGGED CURRENT WEATHER
+	
+	var apifor = `https://api.openweathermap.org/data/2.5/onecall?lat=42.9634&lon=-85.6681&units=imperial&cnt=7&appid=0263cf82697b01a485e30dbce21bd8a5`;
+
+			fetch(apifor)
+				.then(blob => blob.json())
+				.then(data => 
+			{
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next day.
+					var day0 = new Date((data.daily[0].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+					console.log(day0)
+					var tempday0 = data.daily[0].temp.day.toFixed(0);
+					console.log(tempday0)
+					var tempnight0 = data.daily[0].temp.night.toFixed(0);
+					console.log(tempnight0)
+					var curicon0 = data.daily[0].weather.icon;
+					document.getElementById("day0").innerHTML = day0;
+					document.getElementById("tempday0").innerHTML = tempday0;
+					document.getElementById("tempnight0").innerHTML = tempnight0;
+					// display icon 
+					var locationIcon0 = document.querySelector('.weather-icon0');
+					const icon0 = data.daily[0].weather[0].icon;
+					locationIcon0.innerHTML = `<img src="icons/${icon0}.svg">`
+
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next hour.
+					var day1 = new Date((data.daily[1].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+				document.getElementById("day1").innerHTML = day1;
+					document.getElementById("tempday1").innerHTML = tempday1;
+					document.getElementById("tempnight1").innerHTML = tempnight1;
+					// display icon 
+					var locationIcon1 = document.querySelector('.weather-icon1');
+					const icon1 = data.daily[1].weather[0].icon;
+					locationIcon1.innerHTML = `<img src="icons/${icon1}.svg">`
+
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next hour.
+					var day2 = new Date((data.daily[2].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+				document.getElementById("day2").innerHTML = day2;
+					document.getElementById("tempday2").innerHTML = tempday2;
+					document.getElementById("tempnight2").innerHTML = tempnight2;
+					// display icon 
+					var locationIcon2 = document.querySelector('.weather-icon2');
+					const icon2 = data.daily[2].weather[0].icon;
+					locationIcon2.innerHTML = `<img src="icons/${icon2}.svg">`
+
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next hour.
+					var day3 = new Date((data.daily[3].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+				var tempday3 = data.daily[3].temp.day.toFixed(0);
+				var tempnight3 = data.daily[3].temp.night.toFixed(0);
+				var curicon3 = data.daily[3].weather.icon;
+					document.getElementById("day3").innerHTML = day3;
+					document.getElementById("tempday3").innerHTML = tempday3;
+					document.getElementById("tempnight3").innerHTML = tempnight3;
+					// display icon 
+					var locationIcon3 = document.querySelector('.weather-icon3');
+					const icon3 = data.daily[3].weather[0].icon;
+					locationIcon3.innerHTML = `<img src="icons/${icon3}.svg">`
+
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next hour.
+					var day4 = new Date((data.daily[4].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+				var tempday4 = data.daily[4].temp.day.toFixed(0);
+				var tempnight4 = data.daily[4].temp.night.toFixed(0);
+				var curicon4 = data.daily[4].weather.icon;
+					document.getElementById("day4").innerHTML = day4;
+					document.getElementById("tempday4").innerHTML = tempday4;
+					document.getElementById("tempnight4").innerHTML = tempnight4;
+					// display icon 
+					var locationIcon4 = document.querySelector('.weather-icon4');
+					const icon4 = data.daily[4].weather[0].icon;
+					locationIcon4.innerHTML = `<img src="icons/${icon4}.svg">`
+			
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next hour.
+					var day5 = new Date((data.daily[5].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+					var tempday5 = data.daily[5].temp.day.toFixed(0);
+					var tempnight5 = data.daily[5].temp.night.toFixed(0);
+					var curicon5 = data.daily[5].weather.icon;
+					document.getElementById("day5").innerHTML = day5;
+					document.getElementById("tempday5").innerHTML = tempday5;
+					document.getElementById("tempnight5").innerHTML = tempnight5;
+					// display icon 
+					var locationIcon5 = document.querySelector('.weather-icon5');
+					const icon5 = data.daily[5].weather[0].icon;
+					locationIcon5.innerHTML = `<img src="icons/${icon5}.svg">`
+
+			// PULLING IN CURRENT WEATHER FORCAST FOR DAILY. numbers in [X] are used to change to the next hour.
+					var day6 = new Date((data.daily[6].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+					var tempday6 = data.daily[6].temp.day.toFixed(0);
+					var tempnight6 = data.daily[6].temp.night.toFixed(0);
+					var curicon6 = data.daily[6].weather.icon;
+					document.getElementById("day6").innerHTML = day6;
+					document.getElementById("tempday6").innerHTML = tempday6;
+					document.getElementById("tempnight6").innerHTML = tempnight6;
+					// display icon 
+					var locationIcon6 = document.querySelector('.weather-icon6');
+					const icon6 = data.daily[6].weather[0].icon;
+					locationIcon6.innerHTML = `<img src="icons/${icon6}.svg">`
+
+			})
+</script>
+</body>
+</html>

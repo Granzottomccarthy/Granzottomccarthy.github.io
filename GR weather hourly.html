@@ -2,28 +2,418 @@
 <html lang="en">
 
 <head>
-	<title>WEATHER TABLET SCREENSAVER</title>
+	<title>forcast-hourly</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
-
 <body>
-	<style>
+<style>
 		body {
-			background-color: black;
-			overflow: hidden;
-			/* Hide scrollbars */
+    		background-color : black;
+			overflow: hidden; /* Hide scrollbars */
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
-	</style>
-	<div class="column, right">
-		<!-- WEATHER HOURLY https://weatherwidget.org/  	-->
-		<div id="ww_620dad8d8cfa5" v='1.20' loc='id'
-			a='{"t":"horizontal","lang":"en","ids":["wl1789"],"cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_sot":"fahrenheit","sl_ics":"one_a","font":"Arial"}'>Weather for the Following Location: <a href="https://2ua.org/usa/grand_rapids/map/" id="ww_620dad8d8cfa5_u" target="_blank">Grand Rapids on map</a></div>
-		<script async src="https://srv1.weatherwidget.org/js/?id=ww_620dad8d8cfa5"></script>
+</style>
+	<div class="row">
+		<!-- Open weather map info. See current-weather.html  -->
+		<div class="column, right">
+			<div class="current-weather"><iframe src="current-weather.html" allowtransparency="true" width="350" frameborder="0" height="132" marginwidth="0"></iframe></div>
+		</div>
+		<!-- Open weather map info. See forcast-hourly.html  -->
+		<div class="column, right">
+			<div class="current-weather"><iframe src="forcast-hourly.html" allowtransparency="true" width="400" frameborder="0" height="90" marginwidth="0"></iframe></div>
+		</div>
 	</div>
-</body>
+	<main class="container">
+		<div class="temp">
+			<span id="temp"></span>
+			<span id="metric"></span>
+		</div>
+		<div style="display:none;" id="weatherType"></div>
+		<div id="overlay"></div>
+	</main>
+	<script>
+		// for time and date background change. console.log(n);
+		{
+			const d = new Date();
+			const n = d.getHours();
+			// determine if it is night or day
+			var isDayT = (n >= 7 && n <= 20) ? true : false;
+			// DAY BACKGROUND CHANGE IN TOP RIGHT. USE LINK https://gml.noaa.gov/grad/solcalc/ for SUNRISE SET TIMES 
+			if (isDayT) {
+				let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&units=imperial&appid=0263cf82697b01a485e30dbce21bd8a5`;
+				fetch(api)
+					.then(blob => blob.json())
+					.then(data => {
+						let day = data.weather[0].description;
+						querySelector("#weatherType").innerHTML = weatherType;
+						metric.addEventListener("click", function () {
+							if (toggleCF === false) {
+								temp.innerHTML = fTemp;
+								toggleCF = true;
+							}
+						});
+						// DAY weatherType
+						switch (day) {
+							// Group 2xx: Thunderstorm
+							case "thunderstorm with light rain":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "thunderstorm with rain":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "thunderstorm with heavy rain":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "light thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "heavy thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "ragged thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "thunderstorm with light drizzle":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							case "thunderstorm with drizzle":
+								querySelector("body").style["background-image"] = "url(thunderstorm.jpg)";
+								break;
+							//Group 3xx: Drizzle
+							case "light intensity drizzle":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "drizzle":
+								querySelector("body").style["background-image"] = "url(drizzle.jpg)";
+								break;
+							case "heavy intensity drizzle":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "light intensity drizzle rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "drizzle rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "heavy intensity drizzle rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "shower rain and drizzle":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "heavy shower rain and drizzle":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "shower drizzle":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							//Group 5xx: Rain
+							case "light rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "moderate rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "heavy intensity rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "very heavy rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "extreme rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "freezing rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "light intensity shower rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "shower rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "heavy intensity shower rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							case "ragged shower rain":
+								querySelector("body").style["background-image"] = "url(rainy.jpg)";
+								break;
+							//Group 6xx: Snow
+							case "light snow":
+								querySelector("body").style['background-image'] = 'url(light-snow.jpg)';
+								break;
+							case "snow":
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Heavy snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Sleet"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Light shower sleet"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Shower sleet"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Light rain and snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Rain and snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Light shower snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Shower snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							case "Heavy shower snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow.gif)';
+								break;
+							//Group 7xx: Atmosphere
+							case "mist":
+								querySelector("body").style["background-image"] = "url(mist.jpg)";
+								break;
+							case "Smoke": //NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "Haze":
+								querySelector("body").style["background-image"] = "url(haze.jpg)";
+								break;
+							case "sand/ dust whirls": //NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "fog":
+								querySelector("body").style["background-image"] = "url(fog.jpg)";
+								break;
+							case "dust": //NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "tornado":
+								querySelector("body").style['background-image'] = 'url(tornado.jpg)';
+								break;
+							//Group 800: Clear
+							case "clear sky":
+								querySelector("body").style["background-image"] = "url(clear.jpg)";
+								break;
+							//Group 80x: Clouds
+							case "few clouds":
+								querySelector("body").style["background-image"] = "url(few-clouds.jpg)";
+								break;
+							case "scattered clouds":
+								querySelector("body").style["background-image"] = "url(scattered-clouds.jpg)";
+								break;
+							case "broken clouds":
+								querySelector("body").style["background-image"] = "url(broken-clouds.jpg)";
+								break;
+							case "overcast clouds":
+								querySelector("body").style["background-image"] = "url(overcast-clouds.jpg)";
+								break;
+						}
+					})
+			}
+			// NIGHT BACKGROUND CHANGE.
+			else {
+				// DIMMING OVERLAY
+				document.getElementById("overlay").setAttribute("style", "position: fixed; display: block; width: 100%; height: 100%; top: 0; left: 0; overflow - x: hidden; background-color: rgba(0, 0, 0, 0.6); z-index: 50;")
+				let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&units=imperial&appid=0263cf82697b01a485e30dbce21bd8a5`;
+				fetch(api)
+					.then(blob => blob.json())
+					.then(data => {
+						let nightT = data.weather[0].description;
+						querySelector("#weatherType").innerHTML = weatherType;
+						metric.addEventListener("click", function () {
+							if (toggleCF === false) {
+								temp.innerHTML = fTemp;
+								toggleCF = true;
+							}
+						});
+						// NIGHT weatherType
+						switch (nightT) {
+							case "snow":
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							// Group 2xx: Thunderstorm
+							case "thunderstorm with light rain":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "thunderstorm with rain":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "thunderstorm with heavy rain":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "light thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "heavy thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "ragged thunderstorm":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "thunderstorm with light drizzle":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							case "thunderstorm with drizzle":
+								querySelector("body").style["background-image"] = "url(thunderstorm-night.jpg)";
+								break;
+							//Group 3xx: Drizzle
+							case "light intensity drizzle":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "drizzle":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "heavy intensity drizzle":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "light intensity drizzle rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "drizzle rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "heavy intensity drizzle rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "shower rain and drizzle":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "heavy shower rain and drizzle":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "shower drizzle":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							//Group 5xx: Rain
+							case "light rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "moderate rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "heavy intensity rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "very heavy rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "extreme rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "freezing rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "light intensity shower rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "shower rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "heavy intensity shower rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							case "ragged shower rain":
+								querySelector("body").style["background-image"] = "url(rainy-night.jpg)";
+								break;
+							//Group 6xx: Snow
+							case "light snow":
+								querySelector("body").style['background-image'] = 'url(snow-night.jpg)';
+								break;
+							case "snow":
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Heavy snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Sleet"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Light shower sleet"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Shower sleet"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Light rain and snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Rain and snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Light shower snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Shower snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							case "Heavy shower snow"://NEED IMAGE
+								querySelector("body").style['background-image'] = 'url(snow-night.gif)';
+								break;
+							//Group 7xx: Atmosphere
+							case "mist":
+								querySelector("body").style["background-image"] = "url(mist-night.jpg)";
+								break;
+							case "Smoke": //NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "Haze"://NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "sand/ dust whirls": //NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "fog":
+								querySelector("body").style["background-image"] = "url(fog-night.jpg)";
+								break;
+							case "dust": //NEED IMAGE
+								querySelector("body").style["background-image"] = "url(BLANK.jpg)";
+								break;
+							case "tornado":
+								querySelector("body").style['background-image'] = 'url(tornado.jpg)';
+								break;
+							//Group 800: Clear
+							case "clear sky":
+								querySelector("body").style["background-image"] = "url(clear-night.jpg)";
+								break;
+							//Group 80x: Clouds
+							case "few clouds":
+								querySelector("body").style["background-image"] = "url(scattered-clouds-night.jpg)";
+								break;
+							case "scattered clouds":
+								querySelector("body").style["background-image"] = "url(scattered-clouds-night.jpg)";
+								break;
+							case "broken clouds":
+								querySelector("body").style["background-image"] = "url(scattered-clouds-night.jpg)";
+								break;
+							case "overcast clouds":
+								querySelector("body").style["background-image"] = "url(overcast-clouds-night.jpg)";
+								break;
+						}
+					})
+			}
+		}
+		change_background();
+		// making easy to get elements from the DOM and interecting with HTML
+		function querySelector(element) {
+			return document.querySelector(element);
+		}
+	</script>
 
+</body>
 </html>
