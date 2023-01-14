@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- (c) ammap.com | SVG weather icons -->
+
+<svg
+   version="1.1"
+   width="64"
+   height="64"
+   viewbox="0 0 64 64"
+   id="svg3950"
+   sodipodi:docname="11d.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3952"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="13.078125"
+     inkscape:cx="32.152927"
+     inkscape:cy="32.114695"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3947" />
+  <defs
+     id="defs3933">
+    <filter
+       id="blur"
+       width="1.4936709"
+       height="1.4958505"
+       x="-0.24683544"
+       y="-0.1957535">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         id="feGaussianBlur3916" />
+      <feOffset
+         dx="0"
+         dy="4"
+         result="offsetblur"
+         id="feOffset3918" />
+      <feComponentTransfer
+         id="feComponentTransfer3922">
+        <feFuncA
+           type="linear"
+           slope="0.05"
+           id="feFuncA3920" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge3928">
+        <feMergeNode
+           id="feMergeNode3924" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode3926" />
+      </feMerge>
+    </filter>
+    <style
+       type="text/css"
+       id="style3931"><![CDATA[
+/*
+** CLOUDS
+*/
+@keyframes am-weather-cloud-1 {
+  0% {
+    -webkit-transform: translate(-5px,0px);
+       -moz-transform: translate(-5px,0px);
+        -ms-transform: translate(-5px,0px);
+            transform: translate(-5px,0px);
+  }
+
+  50% {
+    -webkit-transform: translate(10px,0px);
+       -moz-transform: translate(10px,0px);
+        -ms-transform: translate(10px,0px);
+            transform: translate(10px,0px);
+  }
+
+  100% {
+    -webkit-transform: translate(-5px,0px);
+       -moz-transform: translate(-5px,0px);
+        -ms-transform: translate(-5px,0px);
+            transform: translate(-5px,0px);
+  }
+}
+
+.am-weather-cloud-1 {
+  -webkit-animation-name: am-weather-cloud-1;
+     -moz-animation-name: am-weather-cloud-1;
+          animation-name: am-weather-cloud-1;
+  -webkit-animation-duration: 7s;
+     -moz-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@keyframes am-weather-cloud-2 {
+  0% {
+    -webkit-transform: translate(0px,0px);
+       -moz-transform: translate(0px,0px);
+        -ms-transform: translate(0px,0px);
+            transform: translate(0px,0px);
+  }
+
+  50% {
+    -webkit-transform: translate(2px,0px);
+       -moz-transform: translate(2px,0px);
+        -ms-transform: translate(2px,0px);
+            transform: translate(2px,0px);
+  }
+
+  100% {
+    -webkit-transform: translate(0px,0px);
+       -moz-transform: translate(0px,0px);
+        -ms-transform: translate(0px,0px);
+            transform: translate(0px,0px);
+  }
+}
+
+.am-weather-cloud-2 {
+  -webkit-animation-name: am-weather-cloud-2;
+     -moz-animation-name: am-weather-cloud-2;
+          animation-name: am-weather-cloud-2;
+  -webkit-animation-duration: 3s;
+     -moz-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+/*
+** STROKE
+*/
+@keyframes am-weather-stroke {
+  0% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  2% {
+    -webkit-transform: translate(0.3px,0.0px);
+       -moz-transform: translate(0.3px,0.0px);
+        -ms-transform: translate(0.3px,0.0px);
+            transform: translate(0.3px,0.0px);
+  }
+
+  4% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  6% {
+    -webkit-transform: translate(0.5px,0.4px);
+       -moz-transform: translate(0.5px,0.4px);
+        -ms-transform: translate(0.5px,0.4px);
+            transform: translate(0.5px,0.4px);
+  }
+
+  8% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  10% {
+    -webkit-transform: translate(0.3px,0.0px);
+       -moz-transform: translate(0.3px,0.0px);
+        -ms-transform: translate(0.3px,0.0px);
+            transform: translate(0.3px,0.0px);
+  }
+
+  12% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  14% {
+    -webkit-transform: translate(0.3px,0.0px);
+       -moz-transform: translate(0.3px,0.0px);
+        -ms-transform: translate(0.3px,0.0px);
+            transform: translate(0.3px,0.0px);
+  }
+
+  16% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  18% {
+    -webkit-transform: translate(0.3px,0.0px);
+       -moz-transform: translate(0.3px,0.0px);
+        -ms-transform: translate(0.3px,0.0px);
+            transform: translate(0.3px,0.0px);
+  }
+
+  20% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  22% {
+    -webkit-transform: translate(1px,0.0px);
+       -moz-transform: translate(1px,0.0px);
+        -ms-transform: translate(1px,0.0px);
+            transform: translate(1px,0.0px);
+  }
+
+  24% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  26% {
+    -webkit-transform: translate(-1px,0.0px);
+       -moz-transform: translate(-1px,0.0px);
+        -ms-transform: translate(-1px,0.0px);
+            transform: translate(-1px,0.0px);
+
+  }
+
+  28% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  40% {
+    fill: orange;
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+
+  65% {
+    fill: white;
+    -webkit-transform: translate(-1px,5.0px);
+       -moz-transform: translate(-1px,5.0px);
+        -ms-transform: translate(-1px,5.0px);
+            transform: translate(-1px,5.0px);
+  }
+  61% {
+    fill: orange;
+  }
+
+  100% {
+    -webkit-transform: translate(0.0px,0.0px);
+       -moz-transform: translate(0.0px,0.0px);
+        -ms-transform: translate(0.0px,0.0px);
+            transform: translate(0.0px,0.0px);
+  }
+}
+
+.am-weather-stroke {
+  -webkit-animation-name: am-weather-stroke;
+     -moz-animation-name: am-weather-stroke;
+          animation-name: am-weather-stroke;
+  -webkit-animation-duration: 1.11s;
+     -moz-animation-duration: 1.11s;
+          animation-duration: 1.11s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+        ]]></style>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter15198"
+       x="-0.22784812"
+       y="-0.32286998"
+       width="1.4873418"
+       height="1.690583">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood15188" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite15190" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur15192" />
+      <feOffset
+         dx="1"
+         dy="1"
+         result="offset"
+         id="feOffset15194" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite15196" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter15936"
+       x="-0.37974685"
+       y="-0.53811661"
+       width="1.8122363"
+       height="2.1509716">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood15926" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite15928" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur15930" />
+      <feOffset
+         dx="1"
+         dy="1"
+         result="offset"
+         id="feOffset15932" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite15934" />
+    </filter>
+  </defs>
+  <g
+     filter="url(#blur)"
+     id="thunder">
+    <g
+       transform="translate(20,10)"
+       id="g3947">
+      <g
+         class="am-weather-cloud-1"
+         id="g3937"
+         style="stroke-width:0;stroke-dasharray:none;filter:url(#filter15936)">
+        <path
+           d="M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z"
+           fill="#91C0F8"
+           stroke="white"
+           stroke-linejoin="round"
+           stroke-width="1.2"
+           transform="translate(-10,-6), scale(0.6)"
+           id="path3935"
+           style="fill:#cccccc;stroke-width:0;stroke-dasharray:none" />
+      </g>
+      <g
+         id="g3941"
+         style="stroke-width:0;stroke-dasharray:none;filter:url(#filter15198)">
+        <path
+           d="M47.7,35.4     c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3     c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z"
+           fill="#57A0EE"
+           stroke="white"
+           stroke-linejoin="round"
+           stroke-width="1.2"
+           transform="translate(-20,-11)"
+           id="path3939"
+           style="fill:#808080;stroke-width:0;stroke-dasharray:none" />
+      </g>
+      <g
+         transform="translate(-9,28), scale(1.2)"
+         id="g3945"
+         style="stroke-width:0;stroke-dasharray:none">
+        <polygon
+           class="am-weather-stroke"
+           fill="orange"
+           stroke="white"
+           stroke-width="1"
+           points="14.3,-2.9 20.5,-2.9 16.4,4.3 20.3,4.3 11.5,14.6 14.9,6.9 11.1,6.9"
+           id="polygon3943"
+           style="stroke-width:0;stroke-dasharray:none" />
+      </g>
+    </g>
+  </g>
+</svg>
