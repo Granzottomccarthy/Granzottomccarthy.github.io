@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- (c) ammap.com | SVG weather icons -->
+
+<svg
+   version="1.1"
+   width="64"
+   height="64"
+   viewbox="0 0 64 64"
+   id="svg779"
+   sodipodi:docname="13d.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview781"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="13.078125"
+     inkscape:cx="32.038232"
+     inkscape:cy="32.038232"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g748" />
+  <defs
+     id="defs706">
+    <filter
+       id="blur"
+       width="1.4064964"
+       height="1.5474255"
+       x="-0.21028915"
+       y="-0.22764228">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         id="feGaussianBlur689" />
+      <feOffset
+         dx="0"
+         dy="4"
+         result="offsetblur"
+         id="feOffset691" />
+      <feComponentTransfer
+         id="feComponentTransfer695">
+        <feFuncA
+           type="linear"
+           slope="0.05"
+           id="feFuncA693" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge701">
+        <feMergeNode
+           id="feMergeNode697" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode699" />
+      </feMerge>
+    </filter>
+    <style
+       type="text/css"
+       id="style704"><![CDATA[
+/*
+** SUN
+*/
+@keyframes am-weather-sun {
+  0% {
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.am-weather-sun {
+  -webkit-animation-name: am-weather-sun;
+     -moz-animation-name: am-weather-sun;
+      -ms-animation-name: am-weather-sun;
+          animation-name: am-weather-sun;
+  -webkit-animation-duration: 9s;
+     -moz-animation-duration: 9s;
+      -ms-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@keyframes am-weather-sun-shiny {
+  0% {
+    stroke-dasharray: 3px 10px;
+    stroke-dashoffset: 0px;
+  }
+
+  50% {
+    stroke-dasharray: 0.1px 10px;
+    stroke-dashoffset: -1px;
+  }
+
+  100% {
+    stroke-dasharray: 3px 10px;
+    stroke-dashoffset: 0px;
+  }
+}
+
+.am-weather-sun-shiny line {
+  -webkit-animation-name: am-weather-sun-shiny;
+     -moz-animation-name: am-weather-sun-shiny;
+      -ms-animation-name: am-weather-sun-shiny;
+          animation-name: am-weather-sun-shiny;
+  -webkit-animation-duration: 2s;
+     -moz-animation-duration: 2s;
+      -ms-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+/*
+** SNOW
+*/
+@keyframes am-weather-snow {
+  0% {
+    -webkit-transform: translateX(0) translateY(0);
+       -moz-transform: translateX(0) translateY(0);
+        -ms-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+
+  33.33% {
+    -webkit-transform: translateX(-1.2px) translateY(2px);
+       -moz-transform: translateX(-1.2px) translateY(2px);
+        -ms-transform: translateX(-1.2px) translateY(2px);
+            transform: translateX(-1.2px) translateY(2px);
+  }
+
+  66.66% {
+    -webkit-transform: translateX(1.4px) translateY(4px);
+       -moz-transform: translateX(1.4px) translateY(4px);
+        -ms-transform: translateX(1.4px) translateY(4px);
+            transform: translateX(1.4px) translateY(4px);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-1.6px) translateY(6px);
+       -moz-transform: translateX(-1.6px) translateY(6px);
+        -ms-transform: translateX(-1.6px) translateY(6px);
+            transform: translateX(-1.6px) translateY(6px);
+    opacity: 0;
+  }
+}
+
+.am-weather-snow-1 {
+  -webkit-animation-name: am-weather-snow;
+     -moz-animation-name: am-weather-snow;
+      -ms-animation-name: am-weather-snow;
+          animation-name: am-weather-snow;
+  -webkit-animation-duration: 2s;
+     -moz-animation-duration: 2s;
+      -ms-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.am-weather-snow-2 {
+  -webkit-animation-name: am-weather-snow;
+     -moz-animation-name: am-weather-snow;
+      -ms-animation-name: am-weather-snow;
+          animation-name: am-weather-snow;
+  -webkit-animation-delay: 1.2s;
+     -moz-animation-delay: 1.2s;
+      -ms-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-animation-duration: 2s;
+     -moz-animation-duration: 2s;
+      -ms-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+        ]]></style>
+  </defs>
+  <g
+     filter="url(#blur)"
+     id="snowy-1">
+    <g
+       transform="translate(20,10)"
+       id="g750">
+      <g
+         transform="translate(0,16), scale(1.2)"
+         id="g744">
+        <g
+           class="am-weather-sun"
+           id="g740">
+          <g
+             id="g710">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line708" />
+          </g>
+          <g
+             transform="rotate(45)"
+             id="g714">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line712" />
+          </g>
+          <g
+             transform="rotate(90)"
+             id="g718">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line716" />
+          </g>
+          <g
+             transform="rotate(135)"
+             id="g722">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line720" />
+          </g>
+          <g
+             transform="rotate(180)"
+             id="g726">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line724" />
+          </g>
+          <g
+             transform="rotate(225)"
+             id="g730">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line728" />
+          </g>
+          <g
+             transform="rotate(270)"
+             id="g734">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line732" />
+          </g>
+          <g
+             transform="rotate(315)"
+             id="g738">
+            <line
+               fill="none"
+               stroke="orange"
+               stroke-linecap="round"
+               stroke-width="2"
+               transform="translate(0,9)"
+               x1="0"
+               x2="0"
+               y1="0"
+               y2="3"
+               id="line736" />
+          </g>
+        </g>
+        <circle
+           cx="0"
+           cy="0"
+           fill="orange"
+           r="5"
+           stroke="orange"
+           stroke-width="2"
+           id="circle742" />
+      </g>
+      <g
+         id="g748">
+        <path
+           d="M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z"
+           fill="#57A0EE"
+           stroke="white"
+           stroke-linejoin="round"
+           stroke-width="1.5"
+           transform="translate(-15,-5), scale(0.85)"
+           id="path746"
+           style="fill:#b3b3b3" />
+      </g>
+    </g>
+    <g
+       transform="translate(20,9)"
+       id="g776">
+      <g
+         class="am-weather-snow-1"
+         id="g762">
+        <g
+           transform="translate(7,28)"
+           id="g760">
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1.2"
+             transform="translate(0,9), rotate(0)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line752" />
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1"
+             transform="translate(0,9), rotate(45)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line754" />
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1"
+             transform="translate(0,9), rotate(90)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line756" />
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1"
+             transform="translate(0,9), rotate(135)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line758" />
+        </g>
+      </g>
+      <g
+         class="am-weather-snow-2"
+         id="g774">
+        <g
+           transform="translate(16,28)"
+           id="g772">
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1.2"
+             transform="translate(0,9), rotate(0)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line764" />
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1"
+             transform="translate(0,9), rotate(45)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line766" />
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1"
+             transform="translate(0,9), rotate(90)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line768" />
+          <line
+             fill="none"
+             stroke="#57A0EE"
+             stroke-linecap="round"
+             stroke-width="1"
+             transform="translate(0,9), rotate(135)"
+             x1="0"
+             x2="0"
+             y1="-2.5"
+             y2="2.5"
+             id="line770" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
