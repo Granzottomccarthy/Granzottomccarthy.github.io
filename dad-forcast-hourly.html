@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>forcast-hourly WIP-24hr using scroll</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+	<style>
+		body {
+			background-color: rgb(41, 41, 41);
+			overflow: hidden; /* Hide scrollbars */
+		}
+		.day {
+			color: #fcffff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 75%;
+			opacity: .7;
+			vertical-align: text-bottom;
+			margin: -25px 0px -0px -18px;
+			text-shadow: 2px 2px 2px black;
+		}
+		.timeValue {
+			color: #fcffff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 75%;
+			opacity: .7;
+			vertical-align: text-bottom;
+			margin: -25px 0px 0px -20px;
+			text-shadow: 2px 2px 2px black;
+		}
+		.tempround {
+			color: #fcffff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 75%;
+			opacity: .7;
+			vertical-align: top;
+			margin: -35px 0px 0px -18px;
+			text-shadow: 2px 2px 2px black;
+		}
+		#houricon {
+			align-content: center;
+			margin: -45px 20px 0px -33px;
+		}
+		div.scrollmenu a {
+			display: inline-block;
+			color: white;
+			text-align: center;
+			padding: 14px;
+			text-decoration: none;
+		}
+		button {
+			height: 20px;
+			width: 20px;
+			border-radius: 10px;
+			display: inline;
+			padding: 0;
+			border: none;
+			background-color: rgba(128, 128, 128, 0.397);
+		}
+		.buttonleft {
+			position: absolute;
+			top: 35px;
+			left: 0px;
+		}
+		.buttonright {
+			position: absolute;
+			top: 35px;
+			left: 370px;
+		}
+		.columnh {
+			display: inline;
+			width: 50px;
+			padding: 0px;
+			text-align: center;
+			align-content: center;
+			gap: 15px;
+			white-space: nowrap;
+		}
+		.scrollmenu {
+			overflow: hidden;
+			/*CHANGE LENGTH OF SCROLL WINDOW */
+			white-space: nowrap;
+		}
+		#scroll {
+  			width: 350px;
+			height: 100px;
+  			overflow-x: scroll;
+			overflow: hidden;
+			border: 1px solid transparent;
+			position: absolute; left: 20px; 
+		}
+	</style>
+	<!-- !PAGE CONTENT! -->
+	<div class="scrollmenu">
+		<button class="buttonleft" id="slideLeft" type="button">‹</button>
+		<button class="buttonright" id="slideRight" type="button">›</button>
+
+		<a class="columnh" id="scroll">
+			<!-- display next day from openweathermap.*/-->
+			<div class="day" id="day"></div>
+			<!-- display next hour time from openweathermap.*/-->
+			<div class="timeValue" id="timeValue"></div>
+			<!-- display next hour weather icon from openweathermap in top right .*/-->
+			<div class="houricon" id="houricon"></div>
+			<!-- display current temperature from openweathermap in top right.*/-->
+			<div class="tempround" id="temphour"></div>
+		</a>
+	</div>
+	<script>
+		const buttonr = document.getElementById('slideRight');
+			buttonr.onclick = () => {
+				document.getElementById('scroll').scrollLeft += 450;
+			};
+		const buttonl = document.getElementById('slideLeft');
+			buttonl.onclick = () => {
+				document.getElementById('scroll').scrollLeft -= 450;
+			};
+
+	</script>
+	<script>
+		// PULLING IN CURRENT WEATHER FORCAST, SEE LOGGED CURRENT WEATHER
+		var apifor = `https://api.openweathermap.org/data/2.5/onecall?lat=43.1251&lon=-85.5141&units=imperial&appid=7725571efe574ef2cbeb62fd27afe93f`;
+		fetch(apifor)
+			.then(blob => blob.json())
+			.then(data => {
+				console.log(data);
+				// PULLING IN CURRENT WEATHER FORCAST FOR hourly.
+				for (i = 0; i < data.hourly.length; i++) {
+					var day = new Date((data.hourly[i].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+					console.log(day)
+					var hour = new Date((data.hourly[i].dt) * 1000).getHours();
+					var timeValue;
+					if (hour > 0 && hour <= 12) {
+						timeValue = "" + hour;
+					} else if (hour > 12) {
+						timeValue = "" + (hour - 12);
+					} else if (hour == 0) {
+						timeValue = "12";
+					}
+					timeValue += (hour >= 12) ? " P.M." : " A.M.";  // get AM/PM
+					var temphour = data.hourly[i].temp.toFixed(0);
+					// display icon 
+					var icon = data.hourly[i].weather[0].icon;
+					// Add DAY labels to html.
+					var listday = function (day) {
+						var allday = [];
+						for (var days in day) {
+							allday.push(days);
+						}
+						document.getElementById('day').innerHTML += '<a class="columnh">' + day;
+					}
+					listday(day);
+					// Add TIME labels to html.
+					var listtimeValue = function (timeValue) {
+						var alltimeValue = [];
+						for (var timeValues in timeValue) {
+							alltimeValue.push(timeValues);
+						}
+						document.getElementById('timeValue').innerHTML += '<a class="columnh">' + timeValue;
+					}
+					listtimeValue(timeValue);
+					// Add ICONS to html.
+					var listicon = function (icon) {
+						var allicon = [];
+						for (var icons in icon) {
+							allicon.push(icons);
+						}
+						document.getElementById('houricon').innerHTML += '<a class="columnh">' + `<img src="icons/${icon}.svg">`;
+					}
+					listicon(icon);
+					// Add TEMP labels to html.
+					var listtemphour = function (temphour) {
+						var alltemphour = [];
+						for (var temphours in temphour) {
+							alltemphour.push(temphours);
+						}
+						document.getElementById('temphour').innerHTML += '<a class="columnh">' + temphour + ' °F';
+					}
+					listtemphour(temphour);
+				}
+			})
+	</script>
+
+</body>
+
+</html>
