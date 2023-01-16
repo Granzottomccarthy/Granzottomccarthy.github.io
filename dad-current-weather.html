@@ -38,82 +38,6 @@
 		.curtemp:after {
   			content: "°F";
 		}
-		/* Set text size and position of current wind speed from openweathermap */
-		div.curwind {
-			color:#fcffff;
-			font-size: 15px;
-			text-align: center;
-			font-family: Arial,Helvetica,sans-serif;
-			line-height: normal;
-			position: absolute; top: 111px; left: 70px;
-			text-shadow: 2px 2px 2px black;
-		}		
-		.curwind:after {
-  			content: " mph";
-		}
-		.curgust:after {
-  			content: " mph";
-		}
-		/* Icon wind size and position */
-		span.wind-icon {
-			font-size: 18px;
-			position: absolute; top: 111px; left: 50px;
-			text-shadow: 2px 2px 2px black;
-		}		
-		/* Set text size and position of current humidity from openweathermap */
-		div.curhumid {
-			color:#fcffff;
-			font-size: 15px;
-			text-align: center;
-			font-family: Arial,Helvetica,sans-serif;
-			line-height: normal;
-			position: absolute; top: 111px; left: 165px;
-			text-shadow: 2px 2px 2px black;
-		}
-		.curhumid:after {
-  			content: " %";
-		}
-		/* Icon humidity size and position */
-		span.humid-icon {
-			font-size: 18px;
-			position: absolute; top: 111px; left: 145px;
-			text-shadow: 2px 2px 2px black;
-		}
-		/* Set text size and position of current pressure from openweathermap */
-		div.curpress {
-			color:#fcffff;
-			font-size: 15px;
-			text-align: center;
-			font-family: Arial,Helvetica,sans-serif;
-			line-height: normal;
-			position: absolute; top: 111px; left: 246px;
-			text-shadow: 2px 2px 2px black;
-		}
-		.curpress:after {
-  			content: " kPa";
-		}
-		/* Icon pressure size and position */
-		span.pressure-icon {
-			font-size: 18px;
-			position: absolute; top: 111px; left: 225px; 
-			text-shadow: 2px 2px 2px black;
-		}
-		/* Set text size and position of current UV from openweathermap */
-		div.uvi {
-			color:#fcffff;
-			font-size: 15px;
-			text-align: center;
-			font-family: Arial,Helvetica,sans-serif;
-			line-height: normal;
-			position: absolute; top: 111px; left: 335px;
-			text-shadow: 2px 2px 2px black;
-		}
-		/* Icon UV size and position */
-		span.uv-icon {
-			font-size: 18px;
-			position: absolute; top: 111px; left: 310px;
-			text-shadow: 2px 2px 2px black;
-		}
 
 		/* Set icon size and position of current weather from openweathermap */
 		div.current-icon {
@@ -131,23 +55,11 @@
 		<div>
 			<div style="display:none;" id="weatherType"></div>
 		<!-- display location from openweathermap .*/-->
-			<div class="name" id="name"></div>
+			<div id="name"></div>
 		<!-- display current weather conditions from openweathermap  to match background image.*/-->
 			<div class="description" id="description"></div>
 		<!-- display current temperature from openweathermap .*/-->
 			<div class="curtemp" id="curtemp"></div> 
-		<!-- display current wind from openweathermap .*/-->
-			<div class="curwind" id="curwind"></div>
-			<span class="material-symbols-sharp wind-icon">airwave</span>
-		<!-- display current humidity from openweathermap .*/-->
-			<div class="curhumid" id="curhumid"></div> 
-			<span class="material-symbols-sharp humid-icon">water_drop</span>
-		<!-- display current pressure from openweathermap .*/-->
-			<div class="curpress" id="curpress"></div>
-			<span class="material-symbols-sharp pressure-icon">speed</span>
-		<!-- display current UV from openweathermap .*/-->
-			<div class="uvi" id="uvi"></div>
-			<span class="material-symbols-sharp uv-icon">flare</span>
 		<!-- display current weather icon from openweathermap  to match background image.*/-->
 			<div class="current-icon" id="current-icon"><img src="icons/unknown.png" /></div>
 	</div>
@@ -159,7 +71,7 @@
 				.then(blob => blob.json())
 				.then(data => 
 				{
-					let name = data.name;
+					let curtemp = data.main.temp.toFixed(0);
 					let description = data.weather[0].description;	
 					let curwind = data.wind.speed.toFixed(1);
 					let weatherid = data.weather[0].id;
@@ -170,24 +82,14 @@
 					console.log(weatherid);
 
 					querySelector("#weatherType").innerHTML = weatherType;
-					document.getElementById("name").innerHTML = name;
 					document.getElementById("description").innerHTML = description;
-					document.getElementById("curwind").innerHTML = curwind;
+					document.getElementById("curtemp").innerHTML = curtemp;
 					metric.addEventListener("click", function () {
 						if (toggleCF === false) {
 							temp.innerHTML = fTemp;
 							toggleCF = true;
 						}});
 })}
-			var apifor = `https://api.openweathermap.org/data/2.5/onecall?lat=42.9634&lon=-85.6681&units=imperial&cnt=7&appid=7725571efe574ef2cbeb62fd27afe93f`;
-			fetch(apifor)
-				.then(blob => blob.json())
-				.then(data => {
-					// PULLING IN CURRENT WEATHER FORCAST FOR hourly. numbers in [X] are used to change to the next hour.
-					var uvi = data.current.uvi;
-					console.log(uvi)
-					document.getElementById("uvi").innerHTML = uvi;
-				})
 		// making easy to get elements from the DOM and interecting with HTML
 			function querySelector(element) {
 			return document.querySelector(element);
