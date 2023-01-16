@@ -11,7 +11,16 @@
 		body {
     		background-color : black;
 		}
-		/* Create two equal columnds that floats next to each other */
+		div.name {
+			color:#c7c7c7;
+			font-size: 15px;
+			text-align: left;
+			font-family: Arial,Helvetica,sans-serif;
+			line-height: normal;
+			position: absolute; top: 0px; left: 145px;
+			text-shadow: 2px 2px 2px black;
+		}
+		/* Create  equal columns that floats next to each other */
 		.columnd {
 			display: grid;
 			float: left;
@@ -27,7 +36,7 @@
 		    font-size: 75%;
     		opacity: .7;
   			vertical-align: text-bottom;
-			margin:0px 0px 0px 18px;
+			margin:10px 0px 0px 18px;
 			text-shadow: 2px 2px 2px black;
 		}
 		.temproundd {
@@ -62,6 +71,8 @@
 		}
 
 	</style>
+		<!-- display location from openweathermap .*/-->
+		<div class="name">Rockford</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
 		<div class="timeValue" id="day0"></div>
