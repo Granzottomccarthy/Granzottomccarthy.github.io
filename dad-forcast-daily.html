@@ -36,7 +36,7 @@
 		    font-size: 75%;
     		opacity: .7;
   			vertical-align: text-bottom;
-			margin:55px 0px 0px 10px;
+			margin:50px 0px 0px 10px;
 			text-shadow: 2px 2px 2px black;
 		}
 		.temproundd {
@@ -69,11 +69,63 @@
 		.temproundd:after {
   			content: " °F";
 		}
+		body {
+    		background-color : #292929;
+			width: 400px;
+		}
+		/* Set text size and position of current weather condition from openweathermap */
+		div.description {
+			color:#fcffff;
+  			text-transform: capitalize;
+			text-align: center;
+			font-size: 15px;
+			font-family: Arial,Helvetica,sans-serif;
+			line-height: normal;
+			position: fixed; top: 30px; left: 202px;
+			text-shadow: 2px 2px 2px black;
+		}
+		/* Set text size and position of current temperature from openweathermap */
+		div.curtemp {
+			color:#fcffff;
+			font-size: 15px;
+			text-align: center;
+			font-family: Arial,Helvetica,sans-serif;
+			line-height: normal;
+			position: absolute; top: 30px; left: 120px; 
+			text-shadow: 2px 2px 2px black;
+		}
+		.curtemp:after {
+  			content: "°F";
+		}
+
+		/* Set icon size and position of current weather from openweathermap */
+		div.current-icon {
+			scale: .8;
+			text-align: center;
+			line-height: normal;
+			position: absolute; top: 5px; left: 150px; 
+		}
+		/* Icon color */
+		span.material-symbols-sharp {
+			color:#d4d4d4f1
+		}
 
 	</style>
 		<!-- display location from openweathermap .*/-->
 		<div class="name">Rockford</div>
-	<div class="columnd" frameborder="1" >
+	<div class="row">
+		<div>
+			<div style="display:none;" id="weatherType"></div>
+			<!-- display location from openweathermap .*/-->
+			<div id="name"></div>
+			<!-- display current weather conditions from openweathermap  to match background image.*/-->
+			<div class="description" id="description"></div>
+			<!-- display current temperature from openweathermap .*/-->
+			<div class="curtemp" id="curtemp"></div>
+			<!-- display current weather icon from openweathermap  to match background image.*/-->
+			<div class="current-icon" id="current-icon"><img src="icons/unknown.png" /></div>
+		</div>
+	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
 		<div class="timeValue" id="day0"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
@@ -245,8 +297,42 @@
 					var locationIcon6 = document.querySelector('.daily-icon6');
 					const icon6 = data.daily[6].weather[0].icon;
 					locationIcon6.innerHTML = `<img src="icons/${icon6}.svg">`
-
 			})
+		// TEMP, WIND SPEED, GUST, HUMIDITY & PRESSURE DISPLAY. USE LINK https://gml.noaa.gov/grad/solcalc/ 
+		{
+			let api = `https://api.openweathermap.org/data/2.5/weather?lat=42.9634&lon=-85.6681&units=imperial&appid=0263cf82697b01a485e30dbce21bd8a5`;
+			fetch(api)
+				.then(blob => blob.json())
+				.then(data => {
+					let curtemp = data.main.temp.toFixed(0);
+					let description = data.weather[0].description;
+					let curwind = data.wind.speed.toFixed(1);
+					let weatherid = data.weather[0].id;
+					// display icon to match background. console.log(n);
+					let locationIcon = document.querySelector('.current-icon');
+					const icon = data.weather[0].icon;
+					locationIcon.innerHTML = `<img src="icons/${icon}.svg">`;
+					console.log(weatherid);
+
+					querySelector("#weatherType").innerHTML = weatherType;
+					document.getElementById("description").innerHTML = description;
+					document.getElementById("curtemp").innerHTML = curtemp;
+					metric.addEventListener("click", function () {
+						if (toggleCF === false) {
+							temp.innerHTML = fTemp;
+							toggleCF = true;
+						}
+					});
+				})
+		}
+		// making easy to get elements from the DOM and interecting with HTML
+		function querySelector(element) {
+			return document.querySelector(element);
+		}
+		;
+		strequest.send();
+	
+
 </script>
 </body>
 </html>
