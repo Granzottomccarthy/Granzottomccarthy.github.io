@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>dad-forcast-daily</title>
+	<title>dad-forcast</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
 <style>
+/* Daily Weather*/
 		body {
     		background-color : #292929;
+			width: 400px;
+			overflow: hidden; /* Hide scrollbars */
 		}
 		/* Create  equal columns that floats next to each other */
 		.columnd {
@@ -21,13 +26,13 @@
 			align-content: center;
 			gap: 0px;
 		}
-		.timeValue {
+		.timeValued {
 			color:#fcffff;
 			font-family: Arial,Helvetica,sans-serif;
 		    font-size: 70%;
     		opacity: .7;
   			vertical-align: text-bottom;
-			margin:40px 0px 0px 10px;
+			margin:40px 0px 0px 20px;
 			text-shadow: 2px 2px 2px black;
 		}
 		.temproundd {
@@ -36,7 +41,7 @@
 		    font-size: 70%;
     		opacity: .7;
   			vertical-align: top;
-			margin:0px 0px 0px 1px;
+			margin:0px 0px 0px 10px;
 			text-shadow: 2px 2px 2px black;
 		}
 		.temproundn {
@@ -45,7 +50,7 @@
 		    font-size: 70%;
     		opacity: .7;
   			vertical-align: top;
-			margin:0px 0px 0px 1px;
+			margin:-5px 0px 0px 10px;
 			text-shadow: 2px 2px 2px black;
 		}
 		/* Set text size and position of current temperature from openweathermap */
@@ -54,15 +59,11 @@
 		}
 		div.daily-icon0, div.daily-icon1, div.daily-icon2, div.daily-icon3, div.daily-icon4, div.daily-icon5, div.daily-icon6 {
 			align-content: center;
-			margin:-10px 0px -10px -12px
+			margin:-10px 0px -10px 0px
 		}
 		/* Set text size and position of current temperature from openweathermap */
 		.temproundd:after {
   			content: " °F";
-		}
-		body {
-    		background-color : #292929;
-			width: 400px;
 		}
 		/* Set text size and position of current weather condition from openweathermap */
 		div.description {
@@ -72,7 +73,7 @@
 			font-size: 15px;
 			font-family: Arial,Helvetica,sans-serif;
 			line-height: normal;
-			position: absolute; top: 15px; left: 175px;
+			position: absolute; top: 15px; left: 205px;
 			text-shadow: 2px 2px 2px black;
 		}
 		/* Set text size and position of current temperature from openweathermap */
@@ -82,7 +83,7 @@
 			text-align: center;
 			font-family: Arial,Helvetica,sans-serif;
 			line-height: normal;
-			position: absolute; top: 15px; left: 80px; 
+			position: absolute; top: 15px; left: 100px; 
 			text-shadow: 2px 2px 2px black;
 		}
 		.curtemp:after {
@@ -94,15 +95,99 @@
 			scale: .8;
 			text-align: center;
 			line-height: normal;
-			position: absolute; top: -5px; left: 110px; 
+			position: absolute; top: -3px; left: 130px; 
 		}
 		/* Icon color */
 		span.material-symbols-sharp {
 			color:#d4d4d4f1
 		}
-
+/*hourly weather */
+		.day {
+			color: #fcffff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 75%;
+			opacity: .7;
+			vertical-align: text-bottom;
+			margin: 105px 0px 0px -18px;
+			text-shadow: 2px 2px 2px black;
+		}
+		.timeValueh {
+			color: #fcffff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 75%;
+			opacity: .7;
+			vertical-align: text-bottom;
+			margin: -30px 0px -10px -20px;
+			text-shadow: 2px 2px 2px black;
+		}
+		.tempround {
+			color: #fcffff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 75%;
+			opacity: .7;
+			vertical-align: top;
+			margin: -35px 0px 0px -18px;
+			text-shadow: 2px 2px 2px black;
+		}
+		#houricon {
+			align-content: center;
+			margin: -45px 20px 0px -33px;
+		}
+		div.scrollmenu a {
+			display: inline-block;
+			color: white;
+			text-align: center;
+			padding: 14px;
+			text-decoration: none;
+		}
+		button {
+			height: 20px;
+			width: 20px;
+			border-radius: 10px;
+			display: inline;
+			padding: 0;
+			border: none;
+			background-color: rgba(128, 128, 128, 0.397);
+		}
+		.buttonleft {
+			position: absolute;
+			top: 176px;
+			left: 0px;
+		}
+		.buttonright {
+			position: absolute;
+			top: 176px;
+			left: 370px;
+		}
+		.columnh {
+			display: inline;
+			width: 50px;
+			padding: 0px;
+			text-align: center;
+			align-content: center;
+			gap: 15px;
+			white-space: nowrap;
+		}
+		.scrollmenu {
+			overflow: hidden;
+			/*CHANGE LENGTH OF SCROLL WINDOW */
+			white-space: nowrap;
+		}
+		#scroll {
+  			width: 350px;
+			height: 800px;
+  			overflow-x: scroll;
+			overflow: hidden;
+			border: 1px solid transparent;
+			position: absolute; left: 20px; 
+		}
+		#line {
+			background-color: rgba(56, 56, 56, 0.397);
+  			margin-top: 132px;
+			width: 100%;
+		}
 	</style>
-		<!-- display location from openweathermap .*/-->
+<!-- DAILY WEATHER  .*/-->
 	<div class="row">
 		<div>
 			<div style="display:none;" id="weatherType"></div>
@@ -117,7 +202,7 @@
 		</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day0"></div>
+		<div class="timeValued" id="day0"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon0" id="icon0"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -127,7 +212,7 @@
 	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day1"></div>
+		<div class="timeValued" id="day1"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon1" id="icon1"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -137,7 +222,7 @@
 	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day2"></div>
+		<div class="timeValued" id="day2"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon2" id="icon2"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -147,7 +232,7 @@
 	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day3"></div>
+		<div class="timeValued" id="day3"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon3" id="icon3"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -157,7 +242,7 @@
 	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day4"></div>
+		<div class="timeValued" id="day4"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon4" id="icon4"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -167,7 +252,7 @@
 	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day5"></div>
+		<div class="timeValued" id="day5"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon5" id="icon5"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -177,7 +262,7 @@
 	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
-		<div class="timeValue" id="day6"></div>
+		<div class="timeValued" id="day6"></div>
 		<!-- display next day weather icon from openweathermap in top right .*/-->
 		<div class="daily-icon6" id="icon6"><img src="icons/unknown.png" /></div>
 		<!-- display max day temperature from openweathermap in top right.*/-->
@@ -185,7 +270,6 @@
 		<!-- display min night temperature from openweathermap in top right.*/-->
 		<div class="temproundn" id="tempnight6"></div>
 	</div>
-
 <script>
 	// PULLING IN CURRENT WEATHER FORCAST, SEE LOGGED CURRENT WEATHER
 		var apifor = `https://api.openweathermap.org/data/2.5/onecall?lat=43.1251&lon=-85.5141&units=imperial&appid=7725571efe574ef2cbeb62fd27afe93f`;
@@ -321,8 +405,97 @@
 		}
 		;
 		strequest.send();
-	
-
 </script>
+	<!-- !PAGE CONTENT! -->
+	<div class="scrollmenu">
+		<button class="buttonleft" id="slideLeft" type="button">‹</button>
+		<button class="buttonright" id="slideRight" type="button">›</button>
+	
+		<a class="columnh" id="scroll">
+			<!-- display next day from openweathermap.*/-->
+			<div class="day" id="day"></div>
+			<!-- display next hour time from openweathermap.*/-->
+			<div class="timeValueh" id="timeValueh"></div>
+			<!-- display next hour weather icon from openweathermap in top right .*/-->
+			<div class="houricon" id="houricon"></div>
+			<!-- display current temperature from openweathermap in top right.*/-->
+			<div class="tempround" id="temphour"></div>
+		</a>
+	</div>
+	<hr id="line" />
+	<script>
+		const buttonr = document.getElementById('slideRight');
+		buttonr.onclick = () => {
+			document.getElementById('scroll').scrollLeft += 450;
+		};
+		const buttonl = document.getElementById('slideLeft');
+		buttonl.onclick = () => {
+			document.getElementById('scroll').scrollLeft -= 450;
+		};
+	</script>
+	<script>
+		// PULLING IN CURRENT WEATHER FORCAST, SEE LOGGED CURRENT WEATHER
+		var apifor = `https://api.openweathermap.org/data/2.5/onecall?lat=43.1251&lon=-85.5141&units=imperial&appid=7725571efe574ef2cbeb62fd27afe93f`;
+		fetch(apifor)
+			.then(blob => blob.json())
+			.then(data => {
+				console.log(data);
+				// PULLING IN CURRENT WEATHER FORCAST FOR hourly.
+				for (i = 0; i < data.hourly.length; i++) {
+					var day = new Date((data.hourly[i].dt) * 1000).toLocaleString('en-us', { weekday: 'short' });
+					console.log(day)
+					var hour = new Date((data.hourly[i].dt) * 1000).getHours();
+					var timeValueh;
+					if (hour > 0 && hour <= 12) {
+						timeValueh = "" + hour;
+					} else if (hour > 12) {
+						timeValueh = "" + (hour - 12);
+					} else if (hour == 0) {
+						timeValueh = "12";
+					}
+					timeValueh += (hour >= 12) ? " P.M." : " A.M.";  // get AM/PM
+					var temphour = data.hourly[i].temp.toFixed(0);
+					// display icon 
+					var icon = data.hourly[i].weather[0].icon;
+					// Add DAY labels to html.
+					var listday = function (day) {
+						var allday = [];
+						for (var days in day) {
+							allday.push(days);
+						}
+						document.getElementById('day').innerHTML += '<a class="columnh">' + day;
+					}
+					listday(day);
+					// Add TIME labels to html.
+					var listtimeValueh = function (timeValueh) {
+						var alltimeValueh = [];
+						for (var timeValuehs in timeValueh) {
+							alltimeValueh.push(timeValuehs);
+						}
+						document.getElementById('timeValueh').innerHTML += '<a class="columnh">' + timeValueh;
+					}
+					listtimeValueh(timeValueh);
+					// Add ICONS to html.
+					var listicon = function (icon) {
+						var allicon = [];
+						for (var icons in icon) {
+							allicon.push(icons);
+						}
+						document.getElementById('houricon').innerHTML += '<a class="columnh">' + `<img src="icons/${icon}.svg">`;
+					}
+					listicon(icon);
+					// Add TEMP labels to html.
+					var listtemphour = function (temphour) {
+						var alltemphour = [];
+						for (var temphours in temphour) {
+							alltemphour.push(temphours);
+						}
+						document.getElementById('temphour').innerHTML += '<a class="columnh">' + temphour + ' °F';
+					}
+					listtemphour(temphour);
+				}
+			})
+	</script>
+
 </body>
 </html>
