@@ -14,6 +14,8 @@
 		body {
     		background-color : #292929;
 			width: 400px;
+		}
+		#scrolloff {
 			overflow: hidden; /* Hide scrollbars */
 		}
 		/* Create  equal columns that floats next to each other */
@@ -41,7 +43,7 @@
 		    font-size: 70%;
     		opacity: .7;
   			vertical-align: top;
-			margin:0px 0px 0px 10px;
+			margin:3px 0px 0px 14px;
 			text-shadow: 2px 2px 2px black;
 		}
 		.temproundn {
@@ -50,7 +52,7 @@
 		    font-size: 70%;
     		opacity: .7;
   			vertical-align: top;
-			margin:-5px 0px 0px 10px;
+			margin:-5px 0px 0px 14px;
 			text-shadow: 2px 2px 2px black;
 		}
 		/* Set text size and position of current temperature from openweathermap */
@@ -74,7 +76,7 @@
 			font-size: 15px;
 			font-family: Arial,Helvetica,sans-serif;
 			line-height: normal;
-			position: absolute; top: 15px; left: 230px;
+			position: absolute; top: 13px; left: 230px;
 			text-shadow: 2px 2px 2px black;
 		}
 		/* Set text size and position of current temperature from openweathermap */
@@ -132,7 +134,7 @@
 		}
 		#houricon {
 			align-content: center;
-			margin: -45px 20px 0px -33px;
+			margin: -42px 20px 0px -33px;
 		}
 		div.scrollmenu a {
 			display: inline-block;
@@ -189,18 +191,18 @@
 		}
 	</style>
 <!-- DAILY WEATHER  .*/-->
-	<div class="row">
-		<div>
-			<div style="display:none;" id="weatherType"></div>
-			<!-- display location from openweathermap .*/-->
-			<div id="name"></div>
-			<!-- display current weather conditions from openweathermap  to match background image.*/-->
-			<div class="description" id="description"></div>
-			<!-- display current temperature from openweathermap .*/-->
-			<div class="curtemp" id="curtemp"></div>
-			<!-- display current weather icon from openweathermap  to match background image.*/-->
-			<div class="current-icon" id="current-icon"><img src="icons/unknown.png" /></div>
-		</div>
+<div class="row" >
+	<div >
+		<div style="display:none;" id="weatherType"></div>
+		<!-- display location from openweathermap .*/-->
+		<div id="name"></div>
+		<!-- display current weather conditions from openweathermap  to match background image.*/-->
+		<div class="description" id="description"></div>
+		<!-- display current temperature from openweathermap .*/-->
+		<div class="curtemp" id="curtemp"></div>
+		<!-- display current weather icon from openweathermap  to match background image.*/-->
+		<div class="current-icon" id="current-icon"><img src="icons/unknown.png" /></div>
+	</div>
 	<div class="columnd">
 		<!-- display next day from openweathermap.*/-->
 		<div class="timeValued" id="day0"></div>
@@ -271,6 +273,8 @@
 		<!-- display min night temperature from openweathermap in top right.*/-->
 		<div class="temproundn" id="tempnight6"></div>
 	</div>
+</div>
+
 <script>
 	// PULLING IN CURRENT WEATHER FORCAST, SEE LOGGED CURRENT WEATHER
 		var apifor = `https://api.openweathermap.org/data/2.5/onecall?lat=43.1251&lon=-85.5141&units=imperial&appid=7725571efe574ef2cbeb62fd27afe93f`;
@@ -407,12 +411,11 @@
 		;
 		strequest.send();
 </script>
-	<!-- !PAGE CONTENT! -->
+<!-- HOURLY PAGE CONTENT! -->
 	<div class="scrollmenu">
 		<button class="buttonleft" id="slideLeft" type="button">‹</button>
 		<button class="buttonright" id="slideRight" type="button">›</button>
-	
-		<a class="columnh" id="scroll">
+		<a class="columnh" id="scroll"  style="height: 235px">
 			<!-- display next day from openweathermap.*/-->
 			<div class="day" id="day"></div>
 			<!-- display next hour time from openweathermap.*/-->
