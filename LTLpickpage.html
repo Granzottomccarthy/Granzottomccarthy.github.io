@@ -10,6 +10,184 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+<style>
+body {
+  background-color: #f2f2f2; /* Light Grey */
+  /*background: url(winter.jpg); */
+  background-size: cover;
+}
+/*   for all border screens */
+* {
+  box-sizing: border-box;
+}
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 8px;
+  display: none;  /* Hide all elements by default */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+/* Create header that floats next to each other */
+.header {
+  float: left;
+  width: 100%;
+  padding: 50px;
+  display: none; /* Hide all elements by default */
+}
+/* The "show" class is added to the filtered elements ALLOWS THE NAVBAR BUTTONS TO WORK */
+.w3-button:hover .fa-caret-down {
+    transition: transform 0.7s;
+    transform: rotate(180deg);
+  }
+  .w3-button:hover .fa-bars {
+      transition: transform 0.7s;
+      transform: rotate(180deg);
+    }
+    /* navbar small screen dropdowns */
+      .w3-bar-item {
+        position: relative;
+        display: inline-block;
+        background-color: white
+      }
+      .w3-dropdown-content {
+        display: none;
+        position: relative;
+        min-width: 160px;
+        background-color: white
+      }
+      .w3-dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+        background-color: white
+      }
+      .show {display: block;
+      }
+      .w3-dropdown-content.w3-button:hover {
+        background-color: #f04948;/* SIMPLY RECIPIES OFF RED */
+      }
+      .w3-top {
+        background-color: white
+      }
+/* Header backgrounds */
+div.background-main {
+  background: url(images/main.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header background */
+div.background-appetizers {
+  background: url(images/appetizers.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-breakfast {
+  background: url(images/breakfast.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-crafts {
+  background: url(images/crafts.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-desserts {
+  background: url(images/desserts.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-salad {
+  background: url(images/salads.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-sauces {
+  background: url(images/sauces.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-sides {
+  background: url(images/side-dishes.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-snacks {
+  background: url(images/snacks.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-soup {
+  background: url(images/soups.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* Header backgrounds */
+div.background-drink {
+  background: url(images/drinks.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* header titles: */
+div.transbox {
+  margin: 30px 25%;
+  background-color: #ffffff; /* off white */
+  border: 1px solid black;
+  opacity: 0.7;
+}
+div.transbox p {
+  margin: 1%;
+  font-size: 42px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000; /* black */
+}
+/* MODAL CLOSE BUTTON */
+.btn-modal {
+  background-color: #f04948;/* SIMPLY RECIPIES OFF RED */
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+}
+.btn-modal:hover {
+  background-color: #f04948;/* SIMPLY RECIPIES OFF RED */
+  color: black;
+}
+/* Modal header color */
+.w3-container {
+  background-color: #00b4ae;/* SIMPLY RECIPIES OFF RED */
+  color: black;
+}
+</style>
+
 <body>
 	<style>
 		body {
@@ -22,8 +200,8 @@
 	</style>
 	<div class="row">
 		<div>
-				<iframe
-					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1IkqJV-CuC5P8pRrB6SlXASccmEUaKWfm3jOIXL0MccO3vOB6SPoOa7yQo-nchLNM1y0dFa3w93c-/pubhtml?gid=741049325&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+				<div class="column"></div><iframe 
+					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1IkqJV-CuC5P8pRrB6SlXASccmEUaKWfm3jOIXL0MccO3vOB6SPoOa7yQo-nchLNM1y0dFa3w93c-/pubhtml?gid=741049325&amp;single=true&amp;widget=true&amp;headers=false"></iframe></div>
 				<iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSfIF7ClbxmqZ_kFGTBRkDNFLKZFvbmEyvFPzwwZVfD1b92mrA/viewform?embedded=true"
 					width="600" height="637" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
