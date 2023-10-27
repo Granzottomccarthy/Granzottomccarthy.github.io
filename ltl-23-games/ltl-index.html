@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html  lang="en">
+<title>LTL SCORE SHEET 2023-2024</title>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+/*Add doc to load from other files:*/
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+<style>
+/* COLORS FOR WEBSITE https://www.schemecolor.com/ */
+
+/*  background color of web site. */
+/* CURRENT 23-DEC-2020 Silvery Christmas Color Scheme https://www.schemecolor.com/silvery-christmas-color-palette.php */
+
+/*  background color of web site. */
+body {
+  background-color: #f2f2f2; /* Light Grey */
+  /*background: url(winter.jpg); */
+  background-size: cover;
+}
+/*   for all border screens */
+* {
+  box-sizing: border-box;
+}
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 8px;
+  display: none;  /* Hide all elements by default */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+/* Create header that floats next to each other */
+.header {
+  float: left;
+  width: 100%;
+  padding: 50px;
+  display: none; /* Hide all elements by default */
+}
+/* The "show" class is added to the filtered elements ALLOWS THE NAVBAR BUTTONS TO WORK */
+.w3-button:hover .fa-caret-down {
+    transition: transform 0.7s;
+    transform: rotate(180deg);
+  }
+  .w3-button:hover .fa-bars {
+      transition: transform 0.7s;
+      transform: rotate(180deg);
+    }
+    /* navbar small screen dropdowns */
+      .w3-bar-item {
+        position: relative;
+        display: inline-block;
+        background-color: white
+      }
+      .w3-dropdown-content {
+        display: none;
+        position: relative;
+        min-width: 160px;
+        background-color: white
+      }
+      .w3-dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+        background-color: white
+      }
+      .show {display: block;
+      }
+      .w3-dropdown-content.w3-button:hover {
+        background-color: #f04948;/* SIMPLY RECIPIES OFF RED */
+      }
+      .w3-top {
+        background-color: white
+      }
+/* Header backgrounds */
+div.background-main {
+  background: url(images/main.jpg) repeat;
+  border: 2px solid black;
+  background-size: cover;
+}
+/* header titles: */
+div.transbox {
+  margin: 30px 25%;
+  background-color: #ffffff; /* off white */
+  border: 1px solid black;
+  opacity: 0.7;
+}
+div.transbox p {
+  margin: 1%;
+  font-size: 42px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000; /* black */
+}
+</style>
+</head>
+  <body>
+<!-- Navbar (sit on top) -->
+<div w3-include-html="ltl-navbar.html"></div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1600px;margin-top:50px">
+  <p class="w3-center w3-large"><b>LTL SCORE SHEET 2023-2024</b></p>
+  <p class="w3-center w3-padding" style="color:#f04948;border: 2px solid #f04948;margin: 0px 30%;background-color: white;"><b>All Games are hidden at start.</b><br>Use the navbar buttons above to browse Games.  <p>
+<!--* 2023-2024 Games */-->
+<div w3-include-html="ltl.html"></div>
+</div>
+<script>
+// Linked (include) pages
+includeHTML();
+// Filter using buttons dropdowns and links
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+// Used to toggle the recipe (re) dropdown on small screens when clicking on the dropdown button
+function smalldropre() {
+  var x = document.getElementById("smdropre");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+// Used to toggle the INGREDIANT (in) dropdown on small screens when clicking on the dropdown button
+function smalldropin() {
+  var x = document.getElementById("smdropin");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+// Used to toggle the from kitchen of (fr) dropdown on small screens when clicking on the dropdown button
+function smalldropfr() {
+  var x = document.getElementById("smdropfr");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+</body>
+</html>
