@@ -18,20 +18,8 @@ body {font-family: "Lato", sans-serif}
     <a class="w3-bar-item w3-button w3-padding-large w3-right" href="javascript:void(0)" onclick="myFunction()"><i class="fa fa-bars"></i></a>
     <a class="w3-bar-item w3-padding-large" onclick="filterSelection('all')"><b>LIGHT THE LAMP</b></a>
 <!-- Navbar on small screens -->
-<div id="navDemo" class="menu w3-bar-block w3-top" style="margin-top:45px;">
+<div id="navDemo" class="menu w3-bar-block w3-hide w3-hide-large w3-top" style="margin-top:45px;">
   <div class="w3-dropdown-click">
-      <button onclick="smalldropre()" class="w3-button">PICKERS <i class="fa fa-caret-down"></i></button>
-      <div id="smdropre" class="w3-dropdown-content w3-hide w3-bar-block w3-card-4">
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Matt'); myFunction()"> MATT</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Jason'); myFunction()"> JASON</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Shawn'); myFunction()"> SHAWN</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Jeremy'); myFunction()"> JEREMY</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Tina'); myFunction()"> TINA</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('John'); myFunction()"> JOHN</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Kim'); myFunction()"> KIM</a>
-    </div>
-  </div>
-  <div class="w3-dropdown-hover ">
     <button onclick="smalldropre()" class="w3-button">GAMES <i class="fa fa-caret-down"></i></button>
     <div id="smdropre" class="w3-dropdown-content w3-hide w3-bar-block w3-card-4">
       <a class="w3-bar-item w3-button" onclick="filterSelection('Game1'); myFunction()"> Game1</a>
@@ -50,6 +38,19 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
   <br>
+  <div class="w3-dropdown-click">
+    <button onclick="smalldropre()" class="w3-button">PICKERS <i class="fa fa-caret-down"></i></button>
+    <div id="smdropre" class="w3-dropdown-content w3-hide w3-bar-block w3-card-4">
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Matt'); myFunction()"> MATT</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Jason'); myFunction()"> JASON</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Shawn'); myFunction()"> SHAWN</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Jeremy'); myFunction()"> JEREMY</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Tina'); myFunction()"> TINA</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('John'); myFunction()"> JOHN</a>
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Kim'); myFunction()"> KIM</a>
+  </div>
+</div>
+
 </div>
 </div>
 </body>
