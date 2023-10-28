@@ -85,41 +85,20 @@ body {
   padding: 50px;
   display: none; /* Hide all elements by default */
 }
-/* The "show" class is added to the filtered elements ALLOWS THE NAVBAR BUTTONS TO WORK */
-.w3-button:hover .fa-caret-down {
-    transition: transform 0.7s;
-    transform: rotate(180deg);
-  }
-  .w3-button:hover .fa-bars {
-      transition: transform 0.7s;
-      transform: rotate(180deg);
-    }
-    /* navbar small screen dropdowns */
-      .w3-bar-item {
-        position: relative;
-        display: inline-block;
-        background-color: white
-      }
-      .w3-dropdown-content {
-        display: none;
-        position: relative;
-        min-width: 160px;
-        background-color: white
-      }
-      .w3-dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        display: block;
-        background-color: white
-      }
       .show {display: block;
       }
-      .w3-dropdown-content.w3-button:hover {
-        background-color: #f04948;/* SIMPLY RECIPIES OFF RED */
-      }
+
       .w3-top {
         background-color: white
       }
+.w3-bar-item {
+  float: left;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 /* Header backgrounds */
 div.background-main {
   background: url(ltl-23-games/red-wings-goal-wings-goal.gif) repeat;
