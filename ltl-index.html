@@ -78,19 +78,20 @@ div.transbox p {
 }
 </style>
 </head>
+    <script>
+      for (let i = 11; i >= 1; i--) {
+        document.write(`
+              <div class="column menu Game${i}">
+                <img src="/ltl-23-games/Game${i}.jpg" style="width:100%"></img>
+              </div>
+            `);
+      }
+    </script>
 <body>
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1600px;margin-top:10px">
   <p class="w3-center w3-padding" ><p>
-    <script>
-      for (let i = 11; i >= 1; i--) {
-        document.write(`
-          <div class="column menu Game${i}">
-            <img src="/ltl-23-games/Game${i}.jpg" style="width:100%"></img>
-          </div>
-        `);
-      }
-    </script>
+
 </div>
 <!-- Photo Grid Games-->
 <div class="w3-center">
