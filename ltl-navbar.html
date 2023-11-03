@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>NAVBAR</title>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+
+</style>
+</head>
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar " style="background-color: #ffffff">
+    <a class="w3-center black w3-bar-item w3-padding-small" style="color: #ff0000" onclick="filterSelection('all')"><b>LIGHT THE LAMP</b></a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-padding-small w3-button" title="">GAMES<i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block">
+<script>
+  for (let i = 11; i >= 1; i--) {
+    document.write(`
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Game${i}'); myFunction()"> Game${i}</a>
+    `);
+  }
+</script>
+      </div>
+    </div>
+  <br>
+</div>
+</div>
+</body>
+</html>
