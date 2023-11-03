@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" type="image/x-icon" href="/ltl-23-games/favicon.ico">
 <style>
 body {font-family: "Lato", sans-serif}
 
 </style>
 </head>
+
 <body>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -21,61 +21,15 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-dropdown-hover">
       <button class="w3-padding-small w3-button" title="">GAMES<i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block">
-  <!-- 
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game30</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game29</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game28</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game27</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game26</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game25</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game24</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game23</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game22</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game21</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game20</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game19</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game18</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game17</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game16</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game15</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game14</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game11'); myFunction()"> Game13</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game12'); myFunction()"> Game12</a>
-              -->
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game11'); myFunction()"> Game11</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game10'); myFunction()"> Game10</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game9'); myFunction()"> Game9</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game8'); myFunction()"> Game8</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game7'); myFunction()"> Game7</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game6'); myFunction()"> Game6</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game5'); myFunction()"> Game5</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game4'); myFunction()"> Game4</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game3'); myFunction()"> Game3</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game2'); myFunction()"> Game2</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Game1'); myFunction()"> Game1</a>
+<script>
+  for (let i = 11; i >= 1; i--) {
+    document.write(`
+      <a class="w3-bar-item w3-button" onclick="filterSelection('Game${i}'); myFunction()"> Game${i}</a>
+    `);
+  }
+</script>
       </div>
     </div>
-  <!--   <div class="w3-dropdown-hover">
-      <button class="w3-padding-small w3-button" title="RECIPE">PICKERS<i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block">
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Matt'); myFunction()"> MATT</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Jason'); myFunction()"> JASON</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Shawn'); myFunction()"> SHAWN</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Jeremy'); myFunction()"> JEREMY</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Tina'); myFunction()"> TINA</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('John'); myFunction()"> JOHN</a>
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Kim'); myFunction()"> KIM</a>
-      </div>
-    </div> 
-    <div class="w3-dropdown-hover">
-      <button class="w3-padding-small w3-button" title="RECIPE">MORE<i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block">
-        <a class="w3-bar-item w3-button" onclick="filterSelection('Rules'); myFunction()"> RULES</a>
-        <a class="w3-bar-item w3-button" href="https://media.nhl.com/site/asset/public/ext/2023-24/2023-24Rulebook.pdf" target="_blank"> NHL RULES</a>
-        <a class="w3-bar-item w3-button" href="https://records.nhl.com/history/historical-rule-changes" target="_blank"> NHL RULE CHANGES</a>
-        <a class="w3-bar-item w3-button" href="https://www.nhl.com/redwings/stats" target="_blank">NHL PLAYER STATS</a>
-      </div>
-    </div>-->
   <br>
 </div>
 </div>
