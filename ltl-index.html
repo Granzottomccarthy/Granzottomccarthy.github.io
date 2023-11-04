@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="shortcut icon" type="image/x-icon" href="/ltl-23-games/favicon.svg">
-<style>
 <script>
 /*Add doc to load from other files:*/
 function includeHTML() {
@@ -115,26 +114,27 @@ div.transbox p {
 }
 </style>
 </head>
-    <script>
-      for (let i = 11; i >= 1; i--) {
-        document.write(`
-              <div>
-                <div class="column menu Game${i}">
-                <img src="/ltl-23-games/Game${i}.jpg" style="width:100%"></img>
-              </div>
-            `);
-      }
-    </script>
-<body>
+<script>
+  for (let i = 11; i >= 1; i--) {
+    document.write(`
+      <div class="column menu Game${i}">
+        <img src="/ltl-23-games/Game${i}.jpg" style="width:100%"></img>
+      </div>
+    `);
+  }
+</script>
+  <body>
+<!-- Navbar (sit on top) -->
+<div w3-include-html="ltl-navbar.html"></div>
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1600px;margin-top:10px">
   <p class="w3-center w3-padding" ><p>
-
 </div>
 <!-- Photo Grid Games-->
 <div class="w3-center">
 <p class="w3-small">ALL PLAYER DATA USED TO CALCULATE POINTS IS FROM <a href="https://www.hockey-reference.com/">https://www.hockey-reference.com/</a>.</p>
 </div></div>
+
 <script>
 // Linked (include) pages
 includeHTML();
