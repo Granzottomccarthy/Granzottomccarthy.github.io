@@ -112,8 +112,25 @@ div.transbox p {
   font-weight: bold;
   color: #000000; /* black */
 }
+#scaled-frame {
+       zoom: 0.75;
+       -moz-transform: scale(0.50);
+       -moz-transform-origin: 0 0;
+       -o-transform: scale(0.50);
+       -o-transform-origin: 0 0;
+       -webkit-transform: scale(0.50);
+       -webkit-transform-origin: 0 0;
+     }
+     @media screen and (-webkit-min-device-pixel-ratio:0) {
+       #scaled-frame {
+         zoom: 1;
+       }
+     }
 </style>
 </head>
+
+<iframe id="scaled-frame" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1IkqJV-CuC5P8pRrB6SlXASccmEUaKWfm3jOIXL0MccO3vOB6SPoOa7yQo-nchLNM1y0dFa3w93c-/pubhtml?gid=703573962&single=true&widget=false&chrome=false" height="515" width="530" scrolling="no"></iframe>
+
 <script>
   for (let i = 15; i >= 1; i--) {
     document.write(`
@@ -132,7 +149,6 @@ div.transbox p {
 </div>
 <!-- Photo Grid Games-->
 <div class="w3-center">
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1IkqJV-CuC5P8pRrB6SlXASccmEUaKWfm3jOIXL0MccO3vOB6SPoOa7yQo-nchLNM1y0dFa3w93c-/pubhtml?gid=703573962&single=true" height="400" width="800"></iframe>
 <p class="w3-small">ALL PLAYER DATA USED TO CALCULATE POINTS IS FROM <a href="https://www.hockey-reference.com/">https://www.hockey-reference.com/</a>.</p>
 </div></div>
 
