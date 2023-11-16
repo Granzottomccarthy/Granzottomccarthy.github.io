@@ -112,40 +112,16 @@ div.transbox p {
   font-weight: bold;
   color: #000000; /* black */
 }
-#scaled-frame {
-       zoom: 1.0;
-       -moz-transform: scale(1.0);
-       -moz-transform-origin: 0 0;
-       -o-transform: scale(1.0);
-       -o-transform-origin: 0 0;
-       -webkit-transform: scale(1.0);
-       -webkit-transform-origin: 0 0;
-     }
-     @media screen and (-webkit-min-device-pixel-ratio:0) {
-       #scaled-frame {
-         zoom: 1;
-       }
-     }
 </style>
 </head>
-<div class="column menu Game">
-<iframe id="scaled-frame" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1IkqJV-CuC5P8pRrB6SlXASccmEUaKWfm3jOIXL0MccO3vOB6SPoOa7yQo-nchLNM1y0dFa3w93c-/pubhtml?gid=703573962&single=true&widget=false&chrome=false" height="515" width="530" scrolling="no"></iframe>
 <script>
-var iframe = document.getElementById('scaled-frame');
-var parentDiv = iframe.parentNode;
-parentDiv.removeChild(iframe);
-
-for (let i = 15; i >= 1; i--) {
- document.write(`
-   <div class="column menu Game${i}">
-     <img src="/ltl-23-games/Game${i}.jpg" style="width:100%"></img>
-   </div>
- `);
- if (i == 1) {
-   document.getElementById('scaled-frame').appendChild(iframe);
- }
-}
-
+  for (let i = 15; i >= 1; i--) {
+    document.write(`
+      <div class="column menu Game${i}">
+        <img src="/ltl-23-games/Game${i}.jpg" style="width:100%"></img>
+      </div>
+    `);
+  }
 </script>
   <body>
 <!-- Navbar (sit on top) -->
