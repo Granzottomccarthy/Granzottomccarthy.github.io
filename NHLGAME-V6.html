@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Game 19</title>
+ <style>
+   body {
+     font-family: Arial, sans-serif;
+   }
+   h1 {
+     text-align: center;
+   }
+   p {
+     font-size: 1.0em;
+   }
+   img {
+     width: 50px;
+   }
+ </style>
+</head>
+<body>
+ <h1>Game 19</h1>
+ <select id="gameDates"></select>
+ <p id="venue"></p>
+ <p id="startTime"></p>
+ <p id="gameState"></p>
+ <p id="awayTeam"></p>
+ <p id="awayTeamScore"></p>
+ <p id="awayTeamLogo"></p>
+ <p id="homeTeam"></p>
+ <p id="homeTeamScore"></p>
+ <p id="homeTeamLogo"></p>
+ <div id="playerStats"></div>
+
+ <script>
+async function fetchGames() {
+ // Fetch the season schedule
+ const response = await fetch('https://cors-anywhere.herokuapp.com/https://api-web.nhle.com/v1/club-schedule-season/DET/20232024');
+ const data = await response.json();
+
+ // Populate the gameDates dropdown
+ const gameDatesDropdown = document.getElementById('gameDates');
+ data.games.forEach(game => {
+  let option = document.createElement('option');
+  option.value = game.id; // Set the value to the game ID
+  option.text = game.gameDate;
+  gameDatesDropdown.add(option);
+ });
+
+ // Listen for the 'change' event on the dropdown menu
+ gameDatesDropdown.addEventListener('change', async function() {
+  const gameId = this.options[this.selectedIndex].value;
+
+  // Clear previous results
+  document.getElementById('venue').innerText = '';
+  document.getElementById('startTime').innerText = '';
+  document.getElementById('gameState').innerText = '';
+  document.getElementById('awayTeam').innerText = '';
+  document.getElementById('awayTeamScore').innerText = '';
+  document.getElementById('awayTeamLogo').innerHTML = '';
+  document.getElementById('homeTeam').innerText = '';
+  document.getElementById('homeTeamScore').innerText = '';
+  document.getElementById('homeTeamLogo').innerHTML = '';
+  document.getElementById('playerStats').innerHTML = '';
+
+  let boxscoreData; // Declare boxscoreData inside the event listener
+
+  try {
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api-web.nhle.com/v1/gamecenter/${gameId}/boxscore`);
+    boxscoreData = await response.json(); // Assign the response to boxscoreData
+
+    // Display the boxscore data for the selected team
+    const playerStatsDiv = document.getElementById('playerStats');
+    if (boxscoreData.boxscore.playerByGameStats.homeTeam.forwards) { // Check if the property exists before trying to access it
+      boxscoreData.boxscore.playerByGameStats.homeTeam.forwards.filter(player => player.goals > 0 || player.assists > 0).forEach(player => {
+      });
+    }
+
+    function createTable(data, headers) {
+ var table = document.createElement('table');
+ var tableBody = document.createElement('tbody');
+
+ // Create a new row for the headers
+ var headerRow = document.createElement('tr');
+
+ // For each header, create a new table header and append it to the row
+ headers.forEach(function(header) {
+   var headerCell = document.createElement('th');
+   headerCell.appendChild(document.createTextNode(header));
+   headerRow.appendChild(headerCell);
+ });
+
+ // Append the header row to the table
+ tableBody.appendChild(headerRow);
+
+ // Existing code to create the rest of the table
+ data.forEach(function(rowData) {
+   var row = document.createElement('tr');
+
+   rowData.forEach(function(cellData) {
+     var cell = document.createElement('td');
+     cell.appendChild(document.createTextNode(cellData));
+     row.appendChild(cell);
+   });
+
+   tableBody.appendChild(row);
+ });
+
+ table.appendChild(tableBody);
+ return table;
+}
+var headers = ['Player', 'Pos', 'Goals', 'Assists'];
+
+// Check if the away team is 'Red Wings'
+if (boxscoreData.awayTeam.name.default === 'Red Wings') {
+  // If true, display the away team's stats
+  if (boxscoreData.boxscore.playerByGameStats.awayTeam.forwards) {
+      var stats = boxscoreData.boxscore.playerByGameStats.awayTeam.forwards.filter(player => player.goals > 0 || player.assists > 0).map(player => [player.name.default, player.position, player.goals, player.assists]);
+      playerStatsDiv.appendChild(createTable(stats, headers));
+  }
+
+  if (boxscoreData.boxscore.playerByGameStats.awayTeam.defense) {
+      var stats = boxscoreData.boxscore.playerByGameStats.awayTeam.defense.filter(player => player.goals > 0 || player.assists > 0).map(player => [player.name.default, player.position, player.goals, player.assists]);
+      playerStatsDiv.appendChild(createTable(stats, headers));
+  }
+}
+
+// If the away team is not 'Red Wings', check the home team
+else if (boxscoreData.homeTeam.name.default === 'Red Wings') {
+  // If true, display the home team's stats
+  if (boxscoreData.boxscore.playerByGameStats.homeTeam.forwards) {
+      var stats = boxscoreData.boxscore.playerByGameStats.homeTeam.forwards.filter(player => player.goals > 0 || player.assists > 0).map(player => [player.name.default, player.position, player.goals, player.assists]);
+      playerStatsDiv.appendChild(createTable(stats, headers));
+  }
+
+  if (boxscoreData.boxscore.playerByGameStats.homeTeam.defense) {
+      var stats = boxscoreData.boxscore.playerByGameStats.homeTeam.defense.filter(player => player.goals > 0 || player.assists > 0).map(player => [player.name.default, player.position, player.goals, player.assists]);
+      playerStatsDiv.appendChild(createTable(stats, headers));
+  }
+}
+
+              document.getElementById('venue').innerText = "Venue: " + boxscoreData.venue.default;
+                  document.getElementById('startTime').innerText = "Start Time: " + boxscoreData.startTimeUTC;
+                /*  document.getElementById('gameState').innerText = "Game State: " + boxscoreData.gameState; */
+                  document.getElementById('awayTeam').innerText = "Away: " + boxscoreData.awayTeam.name.default + ":  " + boxscoreData.awayTeam.score;
+
+                  let awayTeamLogo = document.createElement('img');
+                  awayTeamLogo.src = boxscoreData.awayTeam.logo;
+                  document.getElementById('awayTeamLogo').appendChild(awayTeamLogo);
+
+                  document.getElementById('homeTeam').innerText =  "Home: " + boxscoreData.homeTeam.name.default + ":  " + boxscoreData.homeTeam.score;
+
+                  let homeTeamLogo = document.createElement('img');
+                  homeTeamLogo.src = boxscoreData.homeTeam.logo;
+                  document.getElementById('homeTeamLogo').appendChild(homeTeamLogo);
+
+            // Create a new table
+            let table = document.createElement('table');
+
+            // Append the table to the playerStats div
+            document.getElementById('playerStats').appendChild(table);
+          } catch (error) {
+          console.error('Error:', error);
+         }
+         })}
+
+         fetchGames();
+    </script>
+  </body>
+</html>
