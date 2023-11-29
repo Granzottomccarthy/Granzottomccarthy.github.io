@@ -143,9 +143,9 @@ else if (boxscoreData.homeTeam.name.default === 'Red Wings') {
   }
 }
 
-              document.getElementById('venue').innerText = "Venue: " + boxscoreData.venue.default;
+                  document.getElementById('venue').innerText = "Venue: " + boxscoreData.venue.default;
                   document.getElementById('startTime').innerText = "Start Time: " + boxscoreData.startTimeUTC;
-                  document.getElementById('timeRemaining').innerText = "Game State: " + clock.timeRemaining;
+                  document.getElementById('timeRemaining').innerText = "Time Remaining: " + clock.timeRemaining;
                   document.getElementById('awayTeam').innerText = "Away: " + boxscoreData.awayTeam.name.default + ":  " + boxscoreData.awayTeam.score;
 
                   let awayTeamLogo = document.createElement('img');
