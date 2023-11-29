@@ -25,6 +25,7 @@
  <select id="gameDates"></select>
  <p id="venue"></p>
  <p id="startTime"></p>
+ <p id="timeRemaining"></p>
  <p id="gameState"></p>
  <p id="awayTeam"></p>
  <p id="awayTeamScore"></p>
@@ -56,6 +57,7 @@ async function fetchGames() {
   // Clear previous results
   document.getElementById('venue').innerText = '';
   document.getElementById('startTime').innerText = '';
+  document.getElementById('timeRemaining').innerText = '';
   document.getElementById('gameState').innerText = '';
   document.getElementById('awayTeam').innerText = '';
   document.getElementById('awayTeamScore').innerText = '';
@@ -143,7 +145,7 @@ else if (boxscoreData.homeTeam.name.default === 'Red Wings') {
 
               document.getElementById('venue').innerText = "Venue: " + boxscoreData.venue.default;
                   document.getElementById('startTime').innerText = "Start Time: " + boxscoreData.startTimeUTC;
-                /*  document.getElementById('gameState').innerText = "Game State: " + boxscoreData.gameState; */
+                  document.getElementById('timeRemaining').innerText = "Game State: " + clock.timeRemaining;
                   document.getElementById('awayTeam').innerText = "Away: " + boxscoreData.awayTeam.name.default + ":  " + boxscoreData.awayTeam.score;
 
                   let awayTeamLogo = document.createElement('img');
